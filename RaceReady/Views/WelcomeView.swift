@@ -27,7 +27,7 @@ struct WelcomeView: View {
                     .cornerRadius(16)
             }
             .fullScreenCover(isPresented: $isPresented) {
-                MainView()
+                MainTabbedView()
             }
         }
         .padding()
