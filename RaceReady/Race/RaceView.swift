@@ -13,46 +13,59 @@ struct RaceView: View {
     
     var body: some View {
         NavigationView {
-            HStack {
-                List(seasonModel.races, id: \.round) { race in
-                    VStack(alignment: .leading) {
+            List(seasonModel.races, id: \.round) { race in
+                NavigationLink(destination: RaceDetailView()) {
+                    VStack {
+                        HStack {
+                            Text(race.circuit.circuitName)
+                                .font(.system(size: 26))
+                                .fontWidth(.condensed)
+                                .foregroundColor(.primary) // Explicitly set the text color
+                            Spacer()
+                            Image("flag")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40)
+                        }
+                        
                         Image("test")
                             .resizable()
-                            .renderingMode(.original)
                             .aspectRatio(contentMode: .fit)
-                        Divider()
-                        VStack {
+                        
+                        VStack(spacing: 10) {
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text(race.raceName)
-                                        .font(.headline)
-                                    Text("\(race.circuit.location.locality), \(race.circuit.location.country)")
-                                        .font(.subheadline)
-                                }
+                                Text(race.raceName)
+                                    .foregroundColor(.primary) // Explicitly set the text color
                                 Spacer()
-                                VStack(alignment: .trailing) {
-                                    Text(race.date.formattedDate())
-                                    Text((race.time ?? "15:00:00Z").formattedTime(use24HourFormat:is24HourFormat()))
-                                }
+                                Text("Round \(race.round)")
+                                    .foregroundColor(.primary) // Explicitly set the text color
+                            }
+                            
+                            HStack {
+                                Text(race.firstPractice.date.formattedDate())
+                                    .foregroundColor(.primary) // Explicitly set the text color
+                                Spacer()
+                                Text(race.date.formattedDate())
+                                    .foregroundColor(.primary) // Explicitly set the text color
                             }
                         }
                     }
                 }
-                .onAppear {
-                    Task {
-                        do {
-                            try await seasonModel.populateSeason()
-                            print("View appeared and data fetched")
-                        } catch {
-                            print("Error in view onAppear: \(error.localizedDescription)")
-                        }
+            }
+            .navigationTitle("F1 Races")
+            .onAppear {
+                Task {
+                    do {
+                        try await seasonModel.populateSeason()
+                    } catch {
+                        print(error.localizedDescription)
                     }
                 }
-                .navigationTitle("F1 Races")
             }
         }
     }
 }
+
 
 #Preview {
     RaceView().environmentObject(SeasonModel(webservice: WebService()))
