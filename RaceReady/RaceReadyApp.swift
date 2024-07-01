@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RaceReadyApp: App {
+    
+    @StateObject private var seasonModel = SeasonModel(webservice: WebService())
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(seasonModel)
         }
     }
 }

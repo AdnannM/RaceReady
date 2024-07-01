@@ -7,35 +7,26 @@
 
 import Foundation
 
-enum TabbedItems: Int, CaseIterable{
-    case race = 0
-    case drivers
-    case teams
-    case news
+enum Tab: String, CaseIterable {
+    case season = "Season"
+    case driver = "Driver"
+    case teams = "Teams"
+    case news = "News"
     
-    var title: String{
+    var systemImage: String {
         switch self {
-        case .race:
-            return "Race"
-        case .drivers:
-            return "Driver"
+        case .season:
+            return "house"
+        case .driver:
+            return "envelope.open.badge.clock"
         case .teams:
-            return "Teams"
+            return "hand.raised"
         case .news:
-            return "News"
+            return "bell"
         }
     }
     
-    var iconName: String{
-        switch self {
-        case .race:
-            return "house"
-        case .drivers:
-            return "envelope.open.badge.clock"
-        case .teams:
-            return "chart.bar.xaxis.ascending"
-        case .news:
-            return "figure.run"
-        }
+    var index: Int {
+        return Tab.allCases.firstIndex(of: self) ?? 0
     }
 }
