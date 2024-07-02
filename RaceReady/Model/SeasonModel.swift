@@ -17,8 +17,10 @@ class SeasonModel: ObservableObject {
     }
     
     @Published private(set) var races: [Race] = []
+    @Published var isLoading: Bool = false
     
     func populateSeason() async throws {
+        self.isLoading = true
         do {
             self.races = try await webservice.fetchSeason()
             print("Season data populated")
@@ -26,5 +28,6 @@ class SeasonModel: ObservableObject {
             print("Error populating season: \(error.localizedDescription)")
             throw error
         }
+        self.isLoading = false
     }
 }
