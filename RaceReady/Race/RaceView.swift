@@ -10,10 +10,10 @@ import SwiftUI
 struct RaceView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var seasonModel: SeasonModel
-    
+        
     var body: some View {
         NavigationStack {
-            if seasonModel.isLoading || seasonModel.races.isEmpty {
+            if seasonModel.isLoading || (seasonModel.races.isEmpty && !seasonModel.hasLoaded ) {
                 ShimmerView()
             } else {
                 List(seasonModel.races, id: \.round) { race in

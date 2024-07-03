@@ -12,9 +12,6 @@ struct ContentView: View {
         VStack {
             WelcomeView()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
-        .background(Color.indigo) 
     }
 }
 

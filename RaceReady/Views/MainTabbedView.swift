@@ -33,6 +33,7 @@ struct MainTabbedView: View {
         
         CustomTabBar()
         
+        
     }
     
     // Custom TabBar

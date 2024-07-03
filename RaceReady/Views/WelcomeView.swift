@@ -13,10 +13,11 @@ struct WelcomeView: View {
     
     var body: some View {
         VStack {
-            
             Spacer()
             Button(action: {
-                isPresented = true
+                withAnimation(.easeInOut(duration: 0.5)) {
+                    isPresented = true
+                }
             }) {
                 Text("Continue")
                     .font(.headline)
@@ -26,16 +27,16 @@ struct WelcomeView: View {
                     .background(Color.blue)
                     .cornerRadius(16)
             }
-            .fullScreenCover(isPresented: $isPresented) {
-                MainTabbedView()
-            }
         }
-        .padding()
-        
+        .background(Color.white)
+        .fullScreenCover(isPresented: $isPresented, content: {
+            MainTabbedView()
+                .transition(.move(edge: .trailing))
+        })
+        .animation(.easeInOut(duration: 0.5), value: isPresented)
     }
 }
 
 #Preview {
     WelcomeView()
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
 }
