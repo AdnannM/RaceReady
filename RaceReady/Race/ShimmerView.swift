@@ -9,26 +9,27 @@ import SwiftUI
 
 struct ShimmerView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("Data is Loading")
-                    .modifier(Shimmer())
-                    .opacity(0.6)
-                    .padding(.trailing, 10)
-                ProgressView()
-            }
-            List {
-                ForEach(0..<3, id: \.self) { _ in
-                    ShimmerRaceItem()
-                }
+        HStack(alignment: .center) {
+            Text("Loading")
+                .opacity(0.5)
+                .padding(.trailing, 5)
+            ProgressView()
+        }
+        List {
+            ForEach(0..<3, id: \.self) { _ in
+                ShimmerRowView()
             }
         }
     }
 }
 
+
+
 #Preview {
     ShimmerView()
 }
+
+
 
 
 

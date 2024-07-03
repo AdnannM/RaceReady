@@ -15,9 +15,9 @@
 		A6063FDB2C2F4C7C009C3AAB /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */; };
 		A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3A2C357F7C0030E228 /* TabItem.swift */; };
 		A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3D2C357FC50030E228 /* Shimmer.swift */; };
-		A61E4B412C35817F0030E228 /* ShimmerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B402C35817F0030E228 /* ShimmerComponents.swift */; };
 		A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */; };
 		A61E4B462C3583B80030E228 /* RaceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B452C3583B80030E228 /* RaceRowView.swift */; };
+		A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */; };
 		A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BE8542C3450FD00FA0695 /* ShimmerView.swift */; };
 		A67382F32C30280600105868 /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F22C30280600105868 /* RaceView.swift */; };
 		A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */; };
@@ -41,9 +41,9 @@
 		A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		A61E4B3A2C357F7C0030E228 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A61E4B3D2C357FC50030E228 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
-		A61E4B402C35817F0030E228 /* ShimmerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerComponents.swift; sourceTree = "<group>"; };
 		A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormattedDataAndTime+Extension.swift"; sourceTree = "<group>"; };
 		A61E4B452C3583B80030E228 /* RaceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRowView.swift; sourceTree = "<group>"; };
+		A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerComponents.swift; sourceTree = "<group>"; };
 		A66BE8542C3450FD00FA0695 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		A67382F22C30280600105868 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabbedView+Extension.swift"; sourceTree = "<group>"; };
@@ -88,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				A61E4B442C3583A80030E228 /* Components */,
-				A61E4B3F2C3581610030E228 /* ShimmerComponents */,
 				A61E4B3C2C357FA70030E228 /* ViewModifier */,
 				A6063FDF2C2F6B7D009C3AAB /* TabBar */,
 				A6063FE62C2F6C06009C3AAB /* Extension */,
@@ -209,18 +208,11 @@
 			path = ViewModifier;
 			sourceTree = "<group>";
 		};
-		A61E4B3F2C3581610030E228 /* ShimmerComponents */ = {
-			isa = PBXGroup;
-			children = (
-				A61E4B402C35817F0030E228 /* ShimmerComponents.swift */,
-			);
-			path = ShimmerComponents;
-			sourceTree = "<group>";
-		};
 		A61E4B442C3583A80030E228 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				A61E4B452C3583B80030E228 /* RaceRowView.swift */,
+				A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -308,13 +300,13 @@
 				A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */,
 				A68F31C52C328F5600891992 /* SeasonData.swift in Sources */,
 				A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */,
+				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
 				A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */,
 				A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */,
 				A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */,
 				A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */,
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
-				A61E4B412C35817F0030E228 /* ShimmerComponents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

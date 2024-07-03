@@ -15,6 +15,7 @@ struct RaceReadyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView().environmentObject(seasonModel)
+                .preferredColorScheme(.light)
         }
     }
 }
