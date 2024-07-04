@@ -29,6 +29,7 @@
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
+		A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9922C3739F8007663AD /* RaceCellView.swift */; };
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
+		A6C8A9922C3739F8007663AD /* RaceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCellView.swift; sourceTree = "<group>"; };
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +218,7 @@
 				A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */,
 				A6C8A98E2C36EA10007663AD /* RaceCard.swift */,
 				A6C8A9902C36EA43007663AD /* RaceRow.swift */,
+				A6C8A9922C3739F8007663AD /* RaceCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				A68F31C52C328F5600891992 /* SeasonData.swift in Sources */,
 				A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */,
 				A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */,
+				A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */,
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
