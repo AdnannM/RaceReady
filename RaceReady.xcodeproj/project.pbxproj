@@ -16,10 +16,8 @@
 		A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3A2C357F7C0030E228 /* TabItem.swift */; };
 		A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3D2C357FC50030E228 /* Shimmer.swift */; };
 		A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */; };
-		A61E4B462C3583B80030E228 /* RaceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B452C3583B80030E228 /* RaceRowView.swift */; };
 		A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */; };
 		A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BE8542C3450FD00FA0695 /* ShimmerView.swift */; };
-		A67382F32C30280600105868 /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F22C30280600105868 /* RaceView.swift */; };
 		A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */; };
 		A67382F72C30B75000105868 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F62C30B75000105868 /* TabbedItems.swift */; };
 		A68F31C52C328F5600891992 /* SeasonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31C42C328F5600891992 /* SeasonData.swift */; };
@@ -28,7 +26,9 @@
 		A68F31CB2C32A75C00891992 /* TabShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31CA2C32A75C00891992 /* TabShape.swift */; };
 		A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31CC2C32A9D800891992 /* TabPostion.swift */; };
 		A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31D02C32FB0900891992 /* RaceDetailView.swift */; };
-		A6C8A98D2C369F84007663AD /* RaceTastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceTastView.swift */; };
+		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
+		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
+		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,10 +43,8 @@
 		A61E4B3A2C357F7C0030E228 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A61E4B3D2C357FC50030E228 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormattedDataAndTime+Extension.swift"; sourceTree = "<group>"; };
-		A61E4B452C3583B80030E228 /* RaceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRowView.swift; sourceTree = "<group>"; };
 		A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerComponents.swift; sourceTree = "<group>"; };
 		A66BE8542C3450FD00FA0695 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
-		A67382F22C30280600105868 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabbedView+Extension.swift"; sourceTree = "<group>"; };
 		A67382F62C30B75000105868 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		A68F31C42C328F5600891992 /* SeasonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonData.swift; sourceTree = "<group>"; };
@@ -55,7 +53,9 @@
 		A68F31CA2C32A75C00891992 /* TabShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShape.swift; sourceTree = "<group>"; };
 		A68F31CC2C32A9D800891992 /* TabPostion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPostion.swift; sourceTree = "<group>"; };
 		A68F31D02C32FB0900891992 /* RaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailView.swift; sourceTree = "<group>"; };
-		A6C8A98C2C369F84007663AD /* RaceTastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTastView.swift; sourceTree = "<group>"; };
+		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
+		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
+		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +105,6 @@
 				A6063FCB2C2F4251009C3AAB /* ContentView.swift */,
 				A6063FCD2C2F4252009C3AAB /* Assets.xcassets */,
 				A6063FCF2C2F4252009C3AAB /* Preview Content */,
-				A6C8A98C2C369F84007663AD /* RaceTastView.swift */,
 			);
 			path = RaceReady;
 			sourceTree = "<group>";
@@ -151,7 +150,7 @@
 		A6063FE02C2F6BC6009C3AAB /* Race */ = {
 			isa = PBXGroup;
 			children = (
-				A67382F22C30280600105868 /* RaceView.swift */,
+				A6C8A98C2C369F84007663AD /* RaceView.swift */,
 				A68F31D02C32FB0900891992 /* RaceDetailView.swift */,
 				A66BE8542C3450FD00FA0695 /* ShimmerView.swift */,
 			);
@@ -214,8 +213,9 @@
 		A61E4B442C3583A80030E228 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A61E4B452C3583B80030E228 /* RaceRowView.swift */,
 				A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */,
+				A6C8A98E2C36EA10007663AD /* RaceCard.swift */,
+				A6C8A9902C36EA43007663AD /* RaceRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -292,18 +292,18 @@
 			files = (
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
 				A68F31CB2C32A75C00891992 /* TabShape.swift in Sources */,
-				A61E4B462C3583B80030E228 /* RaceRowView.swift in Sources */,
 				A68F31C72C328F7300891992 /* WebService.swift in Sources */,
 				A67382F72C30B75000105868 /* TabbedItems.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
-				A67382F32C30280600105868 /* RaceView.swift in Sources */,
 				A6063FCC2C2F4251009C3AAB /* ContentView.swift in Sources */,
+				A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */,
 				A6063FDB2C2F4C7C009C3AAB /* MainTabbedView.swift in Sources */,
 				A6063FD92C2F4C25009C3AAB /* WelcomeView.swift in Sources */,
 				A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */,
 				A68F31C52C328F5600891992 /* SeasonData.swift in Sources */,
 				A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */,
-				A6C8A98D2C369F84007663AD /* RaceTastView.swift in Sources */,
+				A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */,
+				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
 				A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */,

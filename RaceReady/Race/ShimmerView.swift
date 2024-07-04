@@ -15,10 +15,26 @@ struct ShimmerView: View {
                 .padding(.trailing, 5)
             ProgressView()
         }
-        List {
-            ForEach(0..<3, id: \.self) { _ in
-                ShimmerRowView()
+//        List {
+//            ForEach(0..<3, id: \.self) { _ in
+//                ShimmerRowView()
+//            }
+//        }
+        
+        ScrollView {
+            ScrollView(.horizontal) {
+                HStack(spacing: 15) {
+                    ForEach(0..<3, id: \.self) { _ in
+                        ShimmerRowView()
+                    }
+                }.padding(.horizontal)
             }
+            
+            VStack() {
+                ForEach(0..<3, id: \.self) { _ in
+                    ShimmerRowView()
+                }
+            }.padding()
         }
     }
 }

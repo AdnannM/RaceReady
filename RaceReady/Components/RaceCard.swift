@@ -1,26 +1,26 @@
 //
-//  RaceRowView.swift
+//  RaceCard.swift
 //  RaceReady
 //
-//  Created by Adnann Muratovic on 03.07.24.
+//  Created by Adnann Muratovic on 04.07.24.
 //
 
+import Foundation
 import SwiftUI
 
-struct RaceRow: View {
+struct RaceCard: View {
     @Environment(\.colorScheme) var colorScheme
     let race: Race
     
     var body: some View {
         VStack(spacing: 10) {
-            // Circuit name and flag
             HStack {
                 Text(race.circuit.circuitName)
                     .font(.system(size: 25))
                     .fontWidth(.compressed)
                     .fontWeight(.medium)
                 Spacer()
-                Image("austria")
+                Image("austria")  // Replace with race-specific flag image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 35)
@@ -28,18 +28,15 @@ struct RaceRow: View {
             }
             .padding(.bottom, 5)
             
-            // Divider
             Divider()
             
-            // Circuit image
-            Image("austriaCircuit")
+            Image("austriaCircuit")  // Replace with race-specific image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(height: 150)
             
-            // Divider
             Divider()
             
-            // Race details
             VStack(spacing: 10) {
                 HStack {
                     Text(race.raceName)
@@ -59,5 +56,8 @@ struct RaceRow: View {
             }
             .padding(.vertical, 5)
         }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color(.systemBackground)).shadow(radius: 2))
+        .padding(.vertical, 10)  // Add vertical padding
     }
 }
