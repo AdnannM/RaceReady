@@ -28,6 +28,7 @@
 		A68F31CB2C32A75C00891992 /* TabShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31CA2C32A75C00891992 /* TabShape.swift */; };
 		A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31CC2C32A9D800891992 /* TabPostion.swift */; };
 		A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31D02C32FB0900891992 /* RaceDetailView.swift */; };
+		A6C8A98D2C369F84007663AD /* RaceTastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceTastView.swift */; };
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		A68F31CA2C32A75C00891992 /* TabShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShape.swift; sourceTree = "<group>"; };
 		A68F31CC2C32A9D800891992 /* TabPostion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPostion.swift; sourceTree = "<group>"; };
 		A68F31D02C32FB0900891992 /* RaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailView.swift; sourceTree = "<group>"; };
+		A6C8A98C2C369F84007663AD /* RaceTastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTastView.swift; sourceTree = "<group>"; };
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				A6063FCB2C2F4251009C3AAB /* ContentView.swift */,
 				A6063FCD2C2F4252009C3AAB /* Assets.xcassets */,
 				A6063FCF2C2F4252009C3AAB /* Preview Content */,
+				A6C8A98C2C369F84007663AD /* RaceTastView.swift */,
 			);
 			path = RaceReady;
 			sourceTree = "<group>";
@@ -127,8 +130,8 @@
 		A6063FDC2C2F5079009C3AAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A67382F62C30B75000105868 /* TabbedItems.swift */,
 				A68F31C42C328F5600891992 /* SeasonData.swift */,
+				A67382F62C30B75000105868 /* TabbedItems.swift */,
 				A68F31C82C328F9700891992 /* SeasonModel.swift */,
 				A6DFCFCF2C33F29800028113 /* CircuitData.swift */,
 			);
@@ -300,6 +303,7 @@
 				A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */,
 				A68F31C52C328F5600891992 /* SeasonData.swift in Sources */,
 				A68F31CD2C32A9D800891992 /* TabPostion.swift in Sources */,
+				A6C8A98D2C369F84007663AD /* RaceTastView.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
 				A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */,
