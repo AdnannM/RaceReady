@@ -31,6 +31,10 @@
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
 		A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9922C3739F8007663AD /* RaceCellView.swift */; };
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
+		A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */; };
+		A6FDD9C32C38224E00B2CBFF /* WelcomeComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */; };
+		A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */; };
+		A6FDD9C72C3822BF00B2CBFF /* WelcomeMainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C62C3822BF00B2CBFF /* WelcomeMainContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
 		A6C8A9922C3739F8007663AD /* RaceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCellView.swift; sourceTree = "<group>"; };
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
+		A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeComponentsView.swift; sourceTree = "<group>"; };
+		A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSectionView.swift; sourceTree = "<group>"; };
+		A6FDD9C62C3822BF00B2CBFF /* WelcomeMainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMainContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +208,7 @@
 			children = (
 				A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */,
 				A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */,
+				A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -227,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				A6063FD82C2F4C25009C3AAB /* WelcomeView.swift */,
+				A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */,
+				A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */,
+				A6FDD9C62C3822BF00B2CBFF /* WelcomeMainContentView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -303,6 +315,7 @@
 			files = (
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
 				A68F31CB2C32A75C00891992 /* TabShape.swift in Sources */,
+				A6FDD9C72C3822BF00B2CBFF /* WelcomeMainContentView.swift in Sources */,
 				A68F31C72C328F7300891992 /* WebService.swift in Sources */,
 				A67382F72C30B75000105868 /* TabbedItems.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
@@ -318,11 +331,14 @@
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
+				A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */,
 				A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */,
 				A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */,
+				A6FDD9C32C38224E00B2CBFF /* WelcomeComponentsView.swift in Sources */,
 				A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */,
 				A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */,
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
+				A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
