@@ -77,6 +77,10 @@ struct ContinueButtonView: View {
                 .frame(width: 280, height: 60)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(17)
-        }
+        }.fullScreenCover(isPresented: $isPresented, content: {
+            MainTabbedView()
+                .transition(.move(edge: .trailing))
+        })
+        .animation(.easeInOut(duration: 0.5), value: isPresented)
     }
 }
