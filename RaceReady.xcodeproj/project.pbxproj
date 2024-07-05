@@ -91,6 +91,7 @@
 		A6063FC82C2F4250009C3AAB /* RaceReady */ = {
 			isa = PBXGroup;
 			children = (
+				A6FDD9BF2C37D48500B2CBFF /* Onboarding */,
 				A61E4B442C3583A80030E228 /* Components */,
 				A61E4B3C2C357FA70030E228 /* ViewModifier */,
 				A6063FDF2C2F6B7D009C3AAB /* TabBar */,
@@ -122,7 +123,6 @@
 		A6063FD72C2F4C12009C3AAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A6063FD82C2F4C25009C3AAB /* WelcomeView.swift */,
 				A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */,
 			);
 			path = Views;
@@ -221,6 +221,14 @@
 				A6C8A9922C3739F8007663AD /* RaceCellView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A6FDD9BF2C37D48500B2CBFF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A6063FD82C2F4C25009C3AAB /* WelcomeView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
