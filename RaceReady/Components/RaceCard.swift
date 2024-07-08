@@ -10,8 +10,9 @@ import SwiftUI
 
 struct RaceCard: View {
     @Environment(\.colorScheme) var colorScheme
-    let race: Race
     
+    let race: Race
+        
     var body: some View {
         VStack(spacing: 10) {
             HStack {

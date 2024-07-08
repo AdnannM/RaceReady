@@ -20,20 +20,25 @@ struct RaceRow: View {
                     .fontWidth(.compressed)
                     .fontWeight(.medium)
                 Spacer()
-                Image("austria")  // Replace with race-specific flag image
+                
+                if let flag = race.countryFlag {
+                    Image(flag)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 35)
                     .shadow(color: colorScheme == .dark ? .white : .black, radius: 0.5)
+                }
             }
             .padding(.bottom, 5)
             
             Divider()
             
-            Image("austriaCircuit")  // Replace with race-specific image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 150)
+            if let countryImage = race.circuitImage {
+                Image(countryImage)  // Replace with race-specific image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 150)
+            }
             
             Divider()
             
@@ -45,6 +50,8 @@ struct RaceRow: View {
                     Text("Round \(race.round)")
                         .foregroundStyle(.secondary)
                 }
+                
+                
                 HStack {
                     Text("\(race.firstPractice.date.formattedDate()) - \(race.date.formattedDate())")
                         .padding(3)
