@@ -20,20 +20,24 @@ struct RaceCard: View {
                     .fontWidth(.compressed)
                     .fontWeight(.medium)
                 Spacer()
-                Image("austria")  // Replace with race-specific flag image
+                if let flag = race.countryFlag {
+                    Image(flag)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 35)
                     .shadow(color: colorScheme == .dark ? .white : .black, radius: 0.5)
+                }
             }
             .padding(.bottom, 5)
             
             Divider()
             
-            Image("austriaCircuit")  // Replace with race-specific image
+            if let circuitImage = race.circuitImage {
+                Image(circuitImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 150)
+            }
             
             Divider()
             

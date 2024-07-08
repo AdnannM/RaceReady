@@ -44,6 +44,9 @@ struct Race: Codable {
     let sprint: Session?
     let secondPractice: Session?
     let thirdPractice: Session?
+    var circuitId: Int?
+    var circuitImage: String?
+    var countryFlag: String?
 
     enum CodingKeys: String, CodingKey {
         case round
@@ -56,6 +59,9 @@ struct Race: Codable {
         case sprint = "Sprint"
         case secondPractice = "SecondPractice"
         case thirdPractice = "ThirdPractice"
+        case circuitId
+        case circuitImage
+        case countryFlag
     }
 }
 

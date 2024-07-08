@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CircuitData {
     
@@ -19,10 +20,9 @@ struct CircuitData {
     
 }
 
-
-struct CircuitInfo {
+class CircuitInfo: ObservableObject {
     
-    private var circuitInfo: [CircuitData] = [
+    @Published var circuitInfo: [CircuitData] = [
         
         CircuitData(id: 1, circuitImage: "bahreinCircuit", countryFlag: "bahrein", firstGp: 2024, numberOfLaps: 57, circuitLenght: 5.412, raceDistance: 308.238),
         CircuitData(id: 2, circuitImage: "saudiCircuit", countryFlag: "saudi", firstGp: 2021, numberOfLaps: 50, circuitLenght: 6.174, raceDistance: 308.45),
@@ -50,8 +50,7 @@ struct CircuitInfo {
         CircuitData(id: 24, circuitImage: "abuDhabiCircuit", countryFlag: "uae", firstGp: 2009, numberOfLaps: 58, circuitLenght: 5.281, raceDistance: 306.183)
     ]
     
-    // You can add methods to access or manipulate the data
-    func getCircuitInfo() -> [CircuitData] {
-        return circuitInfo
+    func getCircuitInfo(by id: Int) -> CircuitData? {
+        return circuitInfo.first { $0.id == id }
     }
 }
