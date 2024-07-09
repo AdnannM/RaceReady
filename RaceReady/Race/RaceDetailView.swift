@@ -16,8 +16,10 @@ struct RaceDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 450)
+                
             
             CircuitInfoView(race: race)
+                
             
             Spacer()
         }
@@ -39,21 +41,13 @@ struct RaceDetailView: View {
         secondPractice: nil,
         thirdPractice: nil,
         circuitId: nil,
-        circuitImage: "hungaryCircuit"
+        circuitImage: "hungaryCircuit",
+        firstGp: 2021,
+        numberOfLaps: 52,
+        circuitLenght: 2.304,
+        raceDistance: 306.55
     )
     return RaceDetailView(race: sampleRace).environmentObject(SeasonModel(webservice: WebService()))
 }
 
 
-struct BottomRightRoundedBorder: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let radius: CGFloat = 8
-        path.move(to: CGPoint(x: rect.width, y: 0))
-        path.addLine(to: CGPoint(x: rect.width, y: rect.height - radius))
-        path.addArc(center: CGPoint(x: rect.width - radius, y: rect.height - radius), radius: radius, startAngle: .degrees(0), endAngle: .degrees(90), clockwise: false)
-        path.addLine(to: CGPoint(x: radius, y: rect.height))
-        path.addLine(to: CGPoint(x: 0, y: rect.height))
-        return path
-    }
-}

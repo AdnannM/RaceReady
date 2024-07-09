@@ -15,6 +15,8 @@
 		A6063FDB2C2F4C7C009C3AAB /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */; };
 		A6098FF02C3BBA13007AE159 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */; };
 		A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61706672C3D3C6E003182FA /* CircuitInfoView.swift */; };
+		A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066A2C3D404C003182FA /* CircuitInfoRow.swift */; };
+		A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066D2C3D40A2003182FA /* RoundedBorderShape.swift */; };
 		A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3A2C357F7C0030E228 /* TabItem.swift */; };
 		A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3D2C357FC50030E228 /* Shimmer.swift */; };
 		A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */; };
@@ -49,6 +51,8 @@
 		A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A61706672C3D3C6E003182FA /* CircuitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoView.swift; sourceTree = "<group>"; };
+		A617066A2C3D404C003182FA /* CircuitInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoRow.swift; sourceTree = "<group>"; };
+		A617066D2C3D40A2003182FA /* RoundedBorderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderShape.swift; sourceTree = "<group>"; };
 		A61E4B3A2C357F7C0030E228 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A61E4B3D2C357FC50030E228 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormattedDataAndTime+Extension.swift"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		A6063FC82C2F4250009C3AAB /* RaceReady */ = {
 			isa = PBXGroup;
 			children = (
+				A617066C2C3D4086003182FA /* Utils */,
 				A6FDD9BF2C37D48500B2CBFF /* Onboarding */,
 				A61E4B442C3583A80030E228 /* Components */,
 				A61E4B3C2C357FA70030E228 /* ViewModifier */,
@@ -121,7 +126,6 @@
 				A6063FCD2C2F4252009C3AAB /* Assets.xcassets */,
 				A6063FCF2C2F4252009C3AAB /* Preview Content */,
 				A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */,
-				A61706672C3D3C6E003182FA /* CircuitInfoView.swift */,
 			);
 			path = RaceReady;
 			sourceTree = "<group>";
@@ -166,6 +170,7 @@
 		A6063FE02C2F6BC6009C3AAB /* Race */ = {
 			isa = PBXGroup;
 			children = (
+				A61706692C3D4018003182FA /* CircuitView */,
 				A6C8A98C2C369F84007663AD /* RaceView.swift */,
 				A68F31D02C32FB0900891992 /* RaceDetailView.swift */,
 				A66BE8542C3450FD00FA0695 /* ShimmerView.swift */,
@@ -217,6 +222,23 @@
 				A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A61706692C3D4018003182FA /* CircuitView */ = {
+			isa = PBXGroup;
+			children = (
+				A61706672C3D3C6E003182FA /* CircuitInfoView.swift */,
+				A617066A2C3D404C003182FA /* CircuitInfoRow.swift */,
+			);
+			path = CircuitView;
+			sourceTree = "<group>";
+		};
+		A617066C2C3D4086003182FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A617066D2C3D40A2003182FA /* RoundedBorderShape.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A61E4B3C2C357FA70030E228 /* ViewModifier */ = {
@@ -346,6 +368,8 @@
 				A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */,
 				A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */,
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
+				A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */,
+				A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */,
 				A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

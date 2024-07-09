@@ -29,6 +29,7 @@ struct RaceCard: View {
                     .shadow(color: colorScheme == .dark ? .white : .black, radius: 0.5)
                 }
             }
+            
             .padding(.bottom, 5)
             
             Divider()
