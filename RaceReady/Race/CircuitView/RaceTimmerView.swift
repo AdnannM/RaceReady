@@ -9,60 +9,27 @@ import SwiftUI
 
 struct RaceTimmerView: View {
     
+    @State private var isAnimating = false
     @StateObject private var viewModel = CountdownViewModel()
     var race: Race
     
     var body: some View {
-
         HStack {
             VStack(alignment: .leading) {
                 Spacer()
-                Text("GRAND PRIX WEEKEND")
-                    .font(.subheadline)
-                    .foregroundStyle(.gray)
-                Divider()
-                    .padding(.trailing, 15)
+                
+                HeaderView()
+                
+                Divider().padding(.trailing, 35)
+                
                 Spacer()
                 
-                HStack(spacing: 20) {
-                    VStack {
-                        Text("\(viewModel.days)")
-                            .font(.largeTitle)
-                        Text("DAYS")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                        
-                    }
-                    
-                    Divider()
-                    
-                    VStack {
-                        Text("\(viewModel.hours)")
-                            .font(.largeTitle)
-                        Text("HRS")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                        
-                    }
-                    
-                    Divider()
-                    
-                    VStack {
-                        Text("\(viewModel.minutes)")
-                            .font(.largeTitle)
-                        Text("MINS")
-                            .font(.caption)
-                            .foregroundStyle(.gray)
-                        
-                    }
-                    
-                }
+                CountdownView(viewModel: viewModel)
                 
                 Spacer()
             }
             
-            Image(systemName: "clock.circle")
-                .font(.system(size: 70))
+            RotatingClockView()
         }
         .padding()
         .frame(width: 350, height: 130)
@@ -103,37 +70,4 @@ struct RaceTimmerView: View {
 }
 
 
-import SwiftUI
-import Combine
 
-class CountdownViewModel: ObservableObject {
-    @Published var days: Int = 0
-    @Published var hours: Int = 0
-    @Published var minutes: Int = 0
-    
-    private var timer: AnyCancellable?
-    
-    func startCountdown(to date: Date) {
-        timer?.cancel()
-        updateTimeRemaining(date.timeIntervalSinceNow)  // Update immediately
-        
-        timer = Timer.publish(every: 60, on: .main, in: .common)
-            .autoconnect()
-            .sink { _ in
-                let timeInterval = date.timeIntervalSinceNow
-                if timeInterval > 0 {
-                    self.updateTimeRemaining(timeInterval)
-                } else {
-                    self.timer?.cancel()
-                }
-            }
-    }
-    
-    private func updateTimeRemaining(_ timeInterval: TimeInterval) {
-        let totalMinutes = Int(timeInterval / 60)
-        let totalHours = totalMinutes / 60
-        days = totalHours / 24
-        hours = totalHours % 24
-        minutes = totalMinutes % 60
-    }
-}
