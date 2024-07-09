@@ -17,6 +17,7 @@
 		A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61706672C3D3C6E003182FA /* CircuitInfoView.swift */; };
 		A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066A2C3D404C003182FA /* CircuitInfoRow.swift */; };
 		A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066D2C3D40A2003182FA /* RoundedBorderShape.swift */; };
+		A61706702C3D529D003182FA /* RaceTimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066F2C3D529D003182FA /* RaceTimmerView.swift */; };
 		A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3A2C357F7C0030E228 /* TabItem.swift */; };
 		A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3D2C357FC50030E228 /* Shimmer.swift */; };
 		A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */; };
@@ -53,6 +54,7 @@
 		A61706672C3D3C6E003182FA /* CircuitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoView.swift; sourceTree = "<group>"; };
 		A617066A2C3D404C003182FA /* CircuitInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoRow.swift; sourceTree = "<group>"; };
 		A617066D2C3D40A2003182FA /* RoundedBorderShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderShape.swift; sourceTree = "<group>"; };
+		A617066F2C3D529D003182FA /* RaceTimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTimmerView.swift; sourceTree = "<group>"; };
 		A61E4B3A2C357F7C0030E228 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A61E4B3D2C357FC50030E228 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormattedDataAndTime+Extension.swift"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				A61706672C3D3C6E003182FA /* CircuitInfoView.swift */,
 				A617066A2C3D404C003182FA /* CircuitInfoRow.swift */,
+				A617066F2C3D529D003182FA /* RaceTimmerView.swift */,
 			);
 			path = CircuitView;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
+				A61706702C3D529D003182FA /* RaceTimmerView.swift in Sources */,
 				A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */,
 				A68F31CB2C32A75C00891992 /* TabShape.swift in Sources */,
 				A6FDD9C72C3822BF00B2CBFF /* WelcomeMainContentView.swift in Sources */,

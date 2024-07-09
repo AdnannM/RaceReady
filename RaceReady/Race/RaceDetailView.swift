@@ -11,12 +11,16 @@ struct RaceDetailView: View {
     let race: Race
     
     var body: some View {
-        VStack(spacing: 25) {
+        VStack(spacing: 15) {
             Image(race.circuitImage ?? "")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 450)
-                
+                .frame(width: 450, height: 300)
+            
+            if race.isUpcoming {
+                RaceTimmerView(race: race)
+
+            }
             
             CircuitInfoView(race: race)
                 

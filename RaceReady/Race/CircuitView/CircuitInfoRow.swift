@@ -29,7 +29,7 @@ struct CircuitInfoRow: View {
                 }
             }
         }
-        .padding()
+        .padding(.vertical)
         .frame(width: 170, alignment: .topLeading)
         .overlay (
             BottomRightRoundedBorder()
