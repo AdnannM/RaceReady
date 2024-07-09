@@ -34,6 +34,10 @@ class SeasonModel: ObservableObject {
                 if let circuitData = circuitInfo.circuitInfo.first(where: { $0.id == i + 1 }) {
                     races[i].circuitImage = circuitData.circuitImage
                     races[i].countryFlag = circuitData.countryFlag
+                    races[i].firstGp = circuitData.firstGp
+                    races[i].numberOfLaps = circuitData.numberOfLaps
+                    races[i].circuitLenght = circuitData.circuitLenght
+                    races[i].raceDistance = circuitData.raceDistance
                 }
             }
             

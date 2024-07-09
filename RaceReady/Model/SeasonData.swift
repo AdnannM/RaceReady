@@ -47,6 +47,10 @@ struct Race: Codable {
     var circuitId: Int?
     var circuitImage: String?
     var countryFlag: String?
+    var firstGp: Int?
+    var numberOfLaps: Int?
+    var circuitLenght: Double?
+    var raceDistance: Double?
     
     enum CodingKeys: String, CodingKey {
         case round
@@ -62,7 +66,10 @@ struct Race: Codable {
         case circuitId
         case circuitImage
         case countryFlag
-        
+        case firstGp
+        case numberOfLaps
+        case circuitLenght
+        case raceDistance
     }
 }
 
