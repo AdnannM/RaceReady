@@ -24,6 +24,6 @@ struct RotatingClockView: View {
     private var secondHandAngle: Double {
         let calendar = Calendar.current
         let seconds = calendar.component(.second, from: currentTime)
-        return Double(seconds) * 6.0 // 360 degrees / 60 seconds
+        return Double(seconds) * 6.0
     }
 }

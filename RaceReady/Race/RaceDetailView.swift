@@ -15,11 +15,12 @@ struct RaceDetailView: View {
             Image(race.circuitImage ?? "")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 450, height: 300)
+                .frame(width: 400, height: 250)
             
             if race.isUpcoming {
                 RaceTimmerView(race: race)
-
+            } else {
+                RaceResultsView()
             }
             
             CircuitInfoView(race: race)

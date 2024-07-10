@@ -15,6 +15,7 @@ struct TimeUnitView: View {
         VStack {
             Text("\(value)")
                 .font(.largeTitle)
+                .fontWeight(.bold)
             Text(unit)
                 .font(.caption)
                 .foregroundStyle(.gray)
