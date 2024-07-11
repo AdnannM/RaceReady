@@ -14,6 +14,7 @@
 		A6063FD92C2F4C25009C3AAB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FD82C2F4C25009C3AAB /* WelcomeView.swift */; };
 		A6063FDB2C2F4C7C009C3AAB /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */; };
 		A60747992C3FC58F007679D6 /* RaceResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60747982C3FC58F007679D6 /* RaceResultData.swift */; };
+		A607479B2C3FEEFC007679D6 /* RaceResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607479A2C3FEEFC007679D6 /* RaceResultModel.swift */; };
 		A6098FF02C3BBA13007AE159 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */; };
 		A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61706672C3D3C6E003182FA /* CircuitInfoView.swift */; };
 		A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617066A2C3D404C003182FA /* CircuitInfoRow.swift */; };
@@ -58,6 +59,7 @@
 		A6063FD82C2F4C25009C3AAB /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A6063FDA2C2F4C7C009C3AAB /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		A60747982C3FC58F007679D6 /* RaceResultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultData.swift; sourceTree = "<group>"; };
+		A607479A2C3FEEFC007679D6 /* RaceResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultModel.swift; sourceTree = "<group>"; };
 		A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A61706672C3D3C6E003182FA /* CircuitInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoView.swift; sourceTree = "<group>"; };
 		A617066A2C3D404C003182FA /* CircuitInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitInfoRow.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				A68F31C82C328F9700891992 /* SeasonModel.swift */,
 				A6DFCFCF2C33F29800028113 /* CircuitData.swift */,
 				A60747982C3FC58F007679D6 /* RaceResultData.swift */,
+				A607479A2C3FEEFC007679D6 /* RaceResultModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				A61B8D062C3E759300F75612 /* RaceResultsView.swift in Sources */,
 				A68F31C72C328F7300891992 /* WebService.swift in Sources */,
 				A67382F72C30B75000105868 /* TabbedItems.swift in Sources */,
+				A607479B2C3FEEFC007679D6 /* RaceResultModel.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
 				A6063FCC2C2F4251009C3AAB /* ContentView.swift in Sources */,
 				A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */,
