@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// TODO: - Add Vertical Scrol View here...
 struct RaceDetailView: View {
     let race: Race
     
@@ -24,7 +25,6 @@ struct RaceDetailView: View {
             }
             
             CircuitInfoView(race: race)
-                
             
             Spacer()
         }

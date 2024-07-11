@@ -14,6 +14,7 @@ enum NetworkingError: Error {
     case decodingError
 }
 
+/// TODO: - Clear this and make Api-Endpoint and Constants for URLs 
 struct WebService {
     
     func fetchSeason() async throws -> [Race] {
