@@ -8,49 +8,54 @@
 import SwiftUI
 
 struct MainContentView: View {
-    
     @State private var isPresented: Bool = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            TitleView()
-            
-            WelcomeImageView()
-            
-            FeatureListView()
-            
-            Spacer()
-            
-            ContinueButtonView(isPresented: $isPresented)
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: geometry.size.height * 0.02) {
+                    TitleView()
+                    
+                    WelcomeImageView(screenHeight: geometry.size.height)
+                    
+                    FeatureListView()
+                    
+                    Spacer(minLength: geometry.size.height * 0.05)
+                    
+                    ContinueButtonView(isPresented: $isPresented, screenWidth: geometry.size.width)
+                }
+                .padding(.vertical, geometry.size.height * 0.03)
+            }
+            .background(Color(UIColor.systemBackground))
+            .cornerRadius(16)
+            .padding(.horizontal, geometry.size.width * 0.05)
         }
-        .background(Color(UIColor.systemBackground))
-        .cornerRadius(16)
-        .padding()
     }
 }
 
 struct TitleView: View {
     var body: some View {
-        HStack {
-            Spacer()
-            Text("Race Ready")
-                .fontWeight(.bold)
-                .font(.system(size: 45)).fontWeight(.heavy).gradientForeground(colors: [.red, .yellow])
-            Spacer()
-        }
-        .padding(.top)
+        Text("Race Ready")
+            .fontWeight(.heavy)
+            .font(.system(size: UIScreen.main.bounds.width * 0.1))
+            .minimumScaleFactor(0.5)
+            .lineLimit(1)
+            .gradientForeground(colors: [.red, .yellow])
+            .padding(.top)
     }
 }
 
 struct WelcomeImageView: View {
+    let screenHeight: CGFloat
+    
     var body: some View {
         Image("welcome")
             .resizable()
             .scaledToFit()
-            .frame(width: 500, height: 200)
+            .frame(height: screenHeight * 0.25)
             .clipped()
             .padding(.horizontal, -20)
-            .padding(.top, 30)
+            .padding(.top, screenHeight * 0.03)
     }
 }
 
@@ -61,8 +66,8 @@ struct FeatureListView: View {
 }
 
 struct ContinueButtonView: View {
-    
     @Binding var isPresented: Bool
+    let screenWidth: CGFloat
     
     var body: some View {
         Button(action: {
@@ -74,10 +79,11 @@ struct ContinueButtonView: View {
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()
-                .frame(width: 280, height: 60)
+                .frame(width: min(280, screenWidth * 0.8), height: 55)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.yellow]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(17)
-        }.fullScreenCover(isPresented: $isPresented, content: {
+        }
+        .fullScreenCover(isPresented: $isPresented, content: {
             MainTabbedView()
                 .transition(.move(edge: .trailing))
         })

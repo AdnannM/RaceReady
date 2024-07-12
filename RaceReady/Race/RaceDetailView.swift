@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-/// TODO: - Add Vertical Scrol View here...
-
 struct RaceDetailView: View {
     let race: Race
     @State private var raceResult: RaceResult?
@@ -16,25 +14,28 @@ struct RaceDetailView: View {
     @EnvironmentObject var raceResultModel: RaceResultModel
     
     var body: some View {
-        VStack(spacing: 15) {
-            Image(race.circuitImage ?? "")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 400, height: 250)
-            
-            if race.isUpcoming {
-                RaceTimmerView(race: race)
-            } else if let raceResult = raceResult {
-                RaceResultsView(raceResult: raceResult, driverInfo: driverInfo)
-            } else {
-                ProgressView()
+        ScrollView {
+            VStack(spacing: 15) {
+                Image(race.circuitImage ?? "")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 400, height: 250)
+                
+                if race.isUpcoming {
+                    RaceTimmerView(race: race)
+                } else if let raceResult = raceResult {
+                    RaceResultsView(raceResult: raceResult, driverInfo: driverInfo)
+                } else {
+                    ProgressView()
+                }
+                
+                CircuitInfoView(race: race)
+                
+                Spacer()
             }
-            
-            CircuitInfoView(race: race)
-            
-            Spacer()
+            .padding(.top, 20) // Adjust the top padding as needed
+            .padding(.horizontal)
         }
-        .padding()
         .navigationTitle(race.raceName)
         .task {
             do {
