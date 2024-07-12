@@ -40,7 +40,7 @@ struct RaceResult: Codable {
     let circuit: RaceCircuit
     let date: String
     let time: String?
-    let results: [Result]
+    var results: [Result]
     
     enum CodingKeys: String, CodingKey {
         case round
@@ -66,7 +66,7 @@ struct RaceCircuit: Codable {
 struct Result: Codable {
     let number: String
     let position: String
-    let driver: Driver
+    var driver: Driver
     let constructor: Constructor
     let grid: String
     let laps: String
@@ -90,6 +90,7 @@ struct Driver: Codable {
     let dateOfBirth: String
     let nationality: String
     let code: String
+    var driverImage: String?
     
     enum CodingKeys: String, CodingKey {
         case driverId
@@ -98,6 +99,7 @@ struct Driver: Codable {
         case dateOfBirth
         case nationality
         case code
+        case driverImage
     }
 }
 

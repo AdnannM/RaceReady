@@ -26,6 +26,7 @@
 		A617067A2C3D8E78003182FA /* TimeUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61706792C3D8E78003182FA /* TimeUnitView.swift */; };
 		A617067C2C3D903D003182FA /* RotatingClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A617067B2C3D903D003182FA /* RotatingClockView.swift */; };
 		A61B8D062C3E759300F75612 /* RaceResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61B8D052C3E759300F75612 /* RaceResultsView.swift */; };
+		A61E33B22C418A0700D66C85 /* DriverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E33B12C418A0700D66C85 /* DriverView.swift */; };
 		A61E4B3B2C357F7C0030E228 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3A2C357F7C0030E228 /* TabItem.swift */; };
 		A61E4B3E2C357FC50030E228 /* Shimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B3D2C357FC50030E228 /* Shimmer.swift */; };
 		A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */; };
@@ -74,6 +75,7 @@
 		A61706792C3D8E78003182FA /* TimeUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUnitView.swift; sourceTree = "<group>"; };
 		A617067B2C3D903D003182FA /* RotatingClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingClockView.swift; sourceTree = "<group>"; };
 		A61B8D052C3E759300F75612 /* RaceResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultsView.swift; sourceTree = "<group>"; };
+		A61E33B12C418A0700D66C85 /* DriverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverView.swift; sourceTree = "<group>"; };
 		A61E4B3A2C357F7C0030E228 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A61E4B3D2C357FC50030E228 /* Shimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shimmer.swift; sourceTree = "<group>"; };
 		A61E4B422C3582810030E228 /* FormattedDataAndTime+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormattedDataAndTime+Extension.swift"; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				A61B8D052C3E759300F75612 /* RaceResultsView.swift */,
+				A61E33B12C418A0700D66C85 /* DriverView.swift */,
 			);
 			path = RaceResultsView;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */,
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
+				A61E33B22C418A0700D66C85 /* DriverView.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
 				A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */,
 				A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */,

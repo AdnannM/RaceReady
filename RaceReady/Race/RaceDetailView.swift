@@ -12,6 +12,7 @@ import SwiftUI
 struct RaceDetailView: View {
     let race: Race
     @State private var raceResult: RaceResult?
+    @State private var driverInfo = DriverInfo()
     @EnvironmentObject var raceResultModel: RaceResultModel
     
     var body: some View {
@@ -24,7 +25,7 @@ struct RaceDetailView: View {
             if race.isUpcoming {
                 RaceTimmerView(race: race)
             } else if let raceResult = raceResult {
-                RaceResultsView(raceResult: raceResult)
+                RaceResultsView(raceResult: raceResult, driverInfo: driverInfo)
             } else {
                 ProgressView()
             }
