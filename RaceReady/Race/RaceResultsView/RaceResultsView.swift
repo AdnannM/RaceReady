@@ -63,7 +63,7 @@ struct RaceResultsView: View {
                     }
                     .padding()
                     
-                    Image("image")
+                    Image("lando")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150, height: 120)
@@ -89,7 +89,7 @@ struct RaceResultsView: View {
                     }
                     .padding()
                     
-                    Image("image")
+                    Image("carlos")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 150, height: 120)

@@ -35,8 +35,6 @@ struct ShimmerView: View {
     }
 }
 
-
-
 #Preview {
     ShimmerView()
 }
