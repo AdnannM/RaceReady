@@ -11,10 +11,13 @@ import SwiftUI
 struct RaceReadyApp: App {
     
     @StateObject private var seasonModel = SeasonModel(webservice: WebService())
+    @StateObject private var raceResultModel = RaceResultModel(webService: WebService())
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(seasonModel)
+            ContentView()
+                .environmentObject(seasonModel)
+                .environmentObject(raceResultModel)
                 .preferredColorScheme(.light)
         }
     }

@@ -7,28 +7,73 @@
 
 import SwiftUI
 
+//@MainActor
+//class SeasonModel: ObservableObject {
+//    
+//    let webservice: WebService
+//    
+//    init(webservice: WebService) {
+//        self.webservice = webservice
+//    }
+//    
+//    @Published private(set) var races: [Race] = []
+//    @Published var isLoading: Bool = false
+//    @Published var hasLoaded: Bool = false
+//    var circuitInfo = CircuitInfo()
+//    
+//    func populateSeason() async throws {
+//        
+//        guard !hasLoaded else { return }
+//        
+//        self.isLoading = true
+//        do {
+//            self.races = try await webservice.fetchSeason()
+//            self.hasLoaded = true
+//            
+//            for i in 0..<races.count {
+//                if let circuitData = circuitInfo.circuitInfo.first(where: { $0.id == i + 1 }) {
+//                    races[i].circuitImage = circuitData.circuitImage
+//                    races[i].countryFlag = circuitData.countryFlag
+//                    races[i].firstGp = circuitData.firstGp
+//                    races[i].numberOfLaps = circuitData.numberOfLaps
+//                    races[i].circuitLenght = circuitData.circuitLenght
+//                    races[i].raceDistance = circuitData.raceDistance
+//                }
+//            }
+//            
+//            print("Season data populated")
+//        } catch {
+//            print("Error populating season: \(error.localizedDescription)")
+//            throw error
+//        }
+//        self.isLoading = false
+//    }
+//}
+
+
 @MainActor
 class SeasonModel: ObservableObject {
-    
     let webservice: WebService
-    
-    init(webservice: WebService) {
-        self.webservice = webservice
-    }
     
     @Published private(set) var races: [Race] = []
     @Published var isLoading: Bool = false
     @Published var hasLoaded: Bool = false
     var circuitInfo = CircuitInfo()
     
-    func populateSeason() async throws {
-        
+    init(webservice: WebService) {
+        self.webservice = webservice
+        Task {
+            await populateSeason()
+        }
+    }
+    
+    func populateSeason() async {
         guard !hasLoaded else { return }
         
-        self.isLoading = true
+        isLoading = true
         do {
-            self.races = try await webservice.fetchSeason()
-            self.hasLoaded = true
+            races = try await webservice.fetchSeason()
+            hasLoaded = true
             
             for i in 0..<races.count {
                 if let circuitData = circuitInfo.circuitInfo.first(where: { $0.id == i + 1 }) {
@@ -44,8 +89,7 @@ class SeasonModel: ObservableObject {
             print("Season data populated")
         } catch {
             print("Error populating season: \(error.localizedDescription)")
-            throw error
         }
-        self.isLoading = false
+        isLoading = false
     }
 }

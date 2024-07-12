@@ -8,8 +8,11 @@
 import SwiftUI
 
 /// TODO: - Add Vertical Scrol View here...
+
 struct RaceDetailView: View {
     let race: Race
+    @State private var raceResult: RaceResult?
+    @EnvironmentObject var raceResultModel: RaceResultModel
     
     var body: some View {
         VStack(spacing: 15) {
@@ -20,8 +23,10 @@ struct RaceDetailView: View {
             
             if race.isUpcoming {
                 RaceTimmerView(race: race)
+            } else if let raceResult = raceResult {
+                RaceResultsView(raceResult: raceResult)
             } else {
-                RaceResultsView()
+                ProgressView()
             }
             
             CircuitInfoView(race: race)
@@ -30,6 +35,21 @@ struct RaceDetailView: View {
         }
         .padding()
         .navigationTitle(race.raceName)
+        .task {
+            do {
+                // Fetch all race results
+                try await raceResultModel.populateRaceResults()
+                
+                // Find the specific race result for the current race
+                if let result = raceResultModel.raceResults.first(where: { $0.round == race.round && $0.raceName == race.raceName }) {
+                    raceResult = result
+                } else {
+                    print("Race result not found")
+                }
+            } catch {
+                print("Error fetching race results: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -52,7 +72,13 @@ struct RaceDetailView: View {
         circuitLenght: 2.304,
         raceDistance: 306.55
     )
-    return RaceDetailView(race: sampleRace).environmentObject(SeasonModel(webservice: WebService()))
+
+    let sampleDriver = Driver(driverId: "ver", givenName: "Max", familyName: "Verstappen", dateOfBirth: "1997-09-30", nationality: "Dutch", code: "VER")
+    let sampleConstructor = Constructor(constructorId: "red_bull", name: "Red Bull", nationality: "Austrian")
+    let sampleResult1 = Result(number: "1", position: "1", driver: sampleDriver, constructor: sampleConstructor, grid: "1", laps: "53", status: "Finished")
+    let sampleResult2 = Result(number: "44", position: "2", driver: sampleDriver, constructor: sampleConstructor, grid: "2", laps: "53", status: "Finished")
+    let sampleResult3 = Result(number: "16", position: "3", driver: sampleDriver, constructor: sampleConstructor, grid: "3", laps: "53", status: "Finished")
+    let _ = RaceResult(round: "1", raceName: "Sample Race", circuit: RaceCircuit(circuitId: "suzuka", circuitName: "Suzuka Circuit"), date: "2024-07-19", time: "12:00:00Z", results: [sampleResult1, sampleResult2, sampleResult3])
+
+    return RaceDetailView(race: sampleRace).environmentObject(RaceResultModel(webService: WebService()))
 }
-
-
