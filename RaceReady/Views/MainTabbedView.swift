@@ -7,40 +7,43 @@
 
 import SwiftUI
 
-enum Tab1: String, CaseIterable {
-    case season, driver, teams, news
-}
-
 struct MainTabbedView: View {
     @State private var activeTab: Tab = .season
     
     var body: some View {
         TabView(selection: $activeTab) {
-            RaceView()
-                .tabItem {
-                    Label("Season", systemImage: "calendar")
-                }
-                .tag(Tab1.season)
+            NavigationStack {
+                RaceView()
+            }
+            .tabItem {
+                Label(Tab.season.rawValue, systemImage: Tab.season.systemImage)
+            }
+            .tag(Tab.season)
             
-            Text("Drivers")
-                .tabItem {
-                    Label("Drivers", systemImage: "person.2")
-                }
-                .tag(Tab1.driver)
+            NavigationStack {
+                DriversView()
+            }
+            .tabItem {
+                Label(Tab.driver.rawValue, systemImage: Tab.driver.systemImage)
+            }
+            .tag(Tab.driver)
             
-            Text("Teams")
-                .tabItem {
-                    Label("Teams", systemImage: "car.rear.road.lane")
-                }
-                .tag(Tab1.teams)
+            NavigationStack {
+                TeamsView()
+            }
+            .tabItem {
+                Label(Tab.teams.rawValue, systemImage: Tab.teams.systemImage)
+            }
+            .tag(Tab.teams)
             
-            Text("News")
-                .tabItem {
-                    Label("News", systemImage: "newspaper")
-                }
-                .tag(Tab1.news)
+            NavigationStack {
+                NewsView()
+            }
+            .tabItem {
+                Label(Tab.news.rawValue, systemImage: Tab.news.systemImage)
+            }
+            .tag(Tab.news)
         }
-        .background(.primary)
     }
 }
 

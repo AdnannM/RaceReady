@@ -33,6 +33,9 @@
 		A62DC3F32C413336002C9C67 /* RoundCorners+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F22C413336002C9C67 /* RoundCorners+Extension.swift */; };
 		A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F42C413350002C9C67 /* RaceResultsViewModel.swift */; };
 		A62DC3F72C415211002C9C67 /* DriversData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F62C415211002C9C67 /* DriversData.swift */; };
+		A653F5942C42894F00D42CCF /* DriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5932C42894F00D42CCF /* DriversView.swift */; };
+		A653F5962C428AF100D42CCF /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5952C428AF100D42CCF /* TeamsView.swift */; };
+		A653F5982C42906300D42CCF /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5972C42906300D42CCF /* NewsView.swift */; };
 		A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BE8542C3450FD00FA0695 /* ShimmerView.swift */; };
 		A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */; };
 		A67382F72C30B75000105868 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F62C30B75000105868 /* TabbedItems.swift */; };
@@ -79,6 +82,9 @@
 		A62DC3F22C413336002C9C67 /* RoundCorners+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundCorners+Extension.swift"; sourceTree = "<group>"; };
 		A62DC3F42C413350002C9C67 /* RaceResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultsViewModel.swift; sourceTree = "<group>"; };
 		A62DC3F62C415211002C9C67 /* DriversData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversData.swift; sourceTree = "<group>"; };
+		A653F5932C42894F00D42CCF /* DriversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversView.swift; sourceTree = "<group>"; };
+		A653F5952C428AF100D42CCF /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
+		A653F5972C42906300D42CCF /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		A66BE8542C3450FD00FA0695 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabbedView+Extension.swift"; sourceTree = "<group>"; };
 		A67382F62C30B75000105868 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 		A6063FE12C2F6BD4009C3AAB /* Drivers */ = {
 			isa = PBXGroup;
 			children = (
+				A653F5932C42894F00D42CCF /* DriversView.swift */,
 			);
 			path = Drivers;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 		A6063FE22C2F6BDD009C3AAB /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				A653F5952C428AF100D42CCF /* TeamsView.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 		A6063FE32C2F6BE6009C3AAB /* News */ = {
 			isa = PBXGroup;
 			children = (
+				A653F5972C42906300D42CCF /* NewsView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -391,6 +400,8 @@
 				A617067C2C3D903D003182FA /* RotatingClockView.swift in Sources */,
 				A61706782C3D8E61003182FA /* CountdownView.swift in Sources */,
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
+				A653F5982C42906300D42CCF /* NewsView.swift in Sources */,
+				A653F5962C428AF100D42CCF /* TeamsView.swift in Sources */,
 				A61706702C3D529D003182FA /* RaceTimmerView.swift in Sources */,
 				A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */,
 				A62DC3F32C413336002C9C67 /* RoundCorners+Extension.swift in Sources */,
@@ -426,6 +437,7 @@
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
 				A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */,
 				A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */,
+				A653F5942C42894F00D42CCF /* DriversView.swift in Sources */,
 				A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

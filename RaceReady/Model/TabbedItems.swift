@@ -16,17 +16,13 @@ enum Tab: String, CaseIterable {
     var systemImage: String {
         switch self {
         case .season:
-            return "house"
+            return "calendar"
         case .driver:
-            return "envelope.open.badge.clock"
+            return "person.3.fill"
         case .teams:
-            return "hand.raised"
+            return "car.rear.road.lane"
         case .news:
-            return "bell"
+            return "newspaper.fill"
         }
-    }
-    
-    var index: Int {
-        return Tab.allCases.firstIndex(of: self) ?? 0
     }
 }
