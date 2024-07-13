@@ -7,72 +7,50 @@
 
 import SwiftUI
 
+enum Tab1: String, CaseIterable {
+    case season, driver, teams, news
+}
+
 struct MainTabbedView: View {
-    
     @State private var activeTab: Tab = .season
-    @State private var tabShapePosition: CGPoint = .zero
-    
-    @Namespace private var animation
-    
-    
-    init() {
-        UITableView.appearance().isHidden = true
-    }
     
     var body: some View {
-        
         TabView(selection: $activeTab) {
             RaceView()
-                .tag(Tab.season)
+                .tabItem {
+                    Label("Season", systemImage: "calendar")
+                }
+                .tag(Tab1.season)
+            
             Text("Drivers")
-                .tag(Tab.driver)
+                .tabItem {
+                    Label("Drivers", systemImage: "person.2")
+                }
+                .tag(Tab1.driver)
+            
             Text("Teams")
-                .tag(Tab.teams)
+                .tabItem {
+                    Label("Teams", systemImage: "car.rear.road.lane")
+                }
+                .tag(Tab1.teams)
+            
             Text("News")
-                .tag(Tab.news)
+                .tabItem {
+                    Label("News", systemImage: "newspaper")
+                }
+                .tag(Tab1.news)
         }
-        
-        CustomTabBar()
-        
-        
-    }
-    
-    // Custom TabBar
-    
-    @ViewBuilder
-    func CustomTabBar(_ tint: Color = Color("ColorBlue"), _ inactiveTint: Color = .blue) -> some View {
-        HStack(alignment: .bottom, spacing: 0) {
-            ForEach(Tab.allCases, id: \.rawValue) {
-                TabItem(
-                    tint: tint,
-                    inactiveTint: inactiveTint,
-                    tab: $0,
-                    animation: animation,
-                    activeTab: $activeTab,
-                    postion: $tabShapePosition
-                )
-            }
-        }
-        .padding(.horizontal)
-        .padding(.vertical, 10)
-        .background {
-            TabShape(midPoint: tabShapePosition.x)
-                .fill(.white)
-                .ignoresSafeArea()
-                .shadow(color: tint.opacity(0.2), radius: 5, x: 0, y: -5)
-                .blur(radius: 2)
-                .padding(.top, 25)
-        }
-        .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: activeTab)
+        .background(.primary)
     }
 }
 
 
 
 #Preview {
-    MainTabbedView().environmentObject(SeasonModel(webservice: WebService()))
+    MainTabbedView()
+        .environmentObject(RaceResultModel(webService: WebService()))
+        .environmentObject(SeasonModel(webservice: WebService()))
 }
-
 
 
 
