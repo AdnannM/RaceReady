@@ -10,11 +10,11 @@ import SwiftUI
 struct RaceView: View {
     @EnvironmentObject var seasonModel: SeasonModel
     @Environment(\.colorScheme) var colorScheme
-    
+
     var body: some View {
         NavigationStack {
             VStack {
-                if seasonModel.isLoading || (!seasonModel.hasLoaded && seasonModel.races.isEmpty) {
+                if seasonModel.isLoading {
                     ShimmerView()
                 } else if !seasonModel.races.isEmpty {
                     RaceCellView()
@@ -30,6 +30,7 @@ struct RaceView: View {
         }
     }
 }
+
 
 #Preview {
     RaceView()

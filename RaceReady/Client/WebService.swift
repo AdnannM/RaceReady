@@ -22,7 +22,6 @@ struct APIConstants {
     static let limit = 30
 }
 
-
 ///// Networking errors that may occur during API requests.
 enum NetworkingError: Error, LocalizedError {
     case invalidURL

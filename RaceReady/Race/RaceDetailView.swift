@@ -12,7 +12,8 @@ struct RaceDetailView: View {
     @State private var raceResult: RaceResult?
     @State private var driverInfo = DriverInfo()
     @EnvironmentObject var raceResultModel: RaceResultModel
-    
+    @State private var errorMessage: String?
+
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
@@ -26,7 +27,13 @@ struct RaceDetailView: View {
                 } else if let raceResult = raceResult {
                     RaceResultsView(raceResult: raceResult, driverInfo: driverInfo)
                 } else {
-                    ProgressView()
+                    if let errorMessage = errorMessage {
+                        Text("Error: \(errorMessage)")
+                            .foregroundColor(.red)
+                            .padding()
+                    } else {
+                        ProgressView()
+                    }
                 }
                 
                 CircuitInfoView(race: race)
@@ -38,19 +45,25 @@ struct RaceDetailView: View {
         }
         .navigationTitle(race.raceName)
         .task {
-            do {
-                // Fetch all race results
-                try await raceResultModel.populateRaceResults()
-                
-                // Find the specific race result for the current race
-                if let result = raceResultModel.raceResults.first(where: { $0.round == race.round && $0.raceName == race.raceName }) {
-                    raceResult = result
-                } else {
-                    print("Race result not found")
-                }
-            } catch {
-                print("Error fetching race results: \(error.localizedDescription)")
+            await fetchRaceResult()
+        }
+    }
+    
+    private func fetchRaceResult() async {
+        do {
+            // Fetch all race results
+            try await raceResultModel.populateRaceResults()
+            
+            // Find the specific race result for the current race
+            if let result = raceResultModel.raceResults.first(where: { $0.round == race.round && $0.raceName == race.raceName }) {
+                raceResult = result
+            } else {
+                errorMessage = "Race result not found"
+                print("Race result not found")
             }
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Error fetching race results: \(error.localizedDescription)")
         }
     }
 }
