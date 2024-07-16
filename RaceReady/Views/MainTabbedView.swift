@@ -53,6 +53,7 @@ struct MainTabbedView: View {
     MainTabbedView()
         .environmentObject(RaceResultModel(webService: WebService()))
         .environmentObject(SeasonModel(webservice: WebService()))
+        .environmentObject(DriverStandingsModel(webservice: WebService()))
 }
 
 

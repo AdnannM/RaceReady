@@ -20,6 +20,8 @@ struct APIConstants {
     
     /// The maximum number of results to fetch per request.
     static let limit = 30
+    
+    static let driverStandings = "current/driverStandings.json"
 }
 
 ///// Networking errors that may occur during API requests.
@@ -89,6 +91,15 @@ struct WebService {
         
         return allRaceResults
     }
+    
+    /// Fetches driver standings for current seaseon
+    /// - Returns: An array of `DriverStanding` object representing the current standings for this season
+    /// - Throws: A `NetworkingError` if there is an issuse with the network request or decoding the response
+    func fetchDriversStandings() async throws -> [DriverStanding] {
+         let url = APIConstants.baseURL.appendingPathComponent(APIConstants.driverStandings)
+         let driverStandings = try await fetchData(from: url, decodingTo: DriverStandings.self)
+         return driverStandings.mrData.standingsTable.standingsLists.first?.driverStandings ?? []
+     }
     
     /// Fetches and decodes data from a given URL.
     /// - Parameters:
