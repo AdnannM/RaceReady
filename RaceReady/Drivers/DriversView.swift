@@ -7,6 +7,41 @@
 
 import SwiftUI
 
+/// TODO:
+/// - Update: all color for all teams
+/// - Refactor: Clean some code and make it more readable
+/// - Color: Move that into new extension file
+
+
+let driverTeamColors: [String: Color] = [
+    "verstappen": .blue,
+    "perez": .blue,
+    "hamilton": .mercedes,
+    "russell": .mercedes,
+    "leclerc": .red,
+    "sainz": .red,
+    "norris": .orange,
+    "piastri": .orange,
+    "bottas": .green,
+    "guanyu": .green,
+    "gasly": .blue,
+    "ocon": .blue,
+    "magnussen": .gray,
+    "hulkenberg": .gray,
+    "alonso": .green,
+    "stroll": .green,
+    "albon": .lightBlue,
+    "sargeant": .lightBlue,
+    "ricciardo": .blue,
+    "tsunoda" : .blue,
+    "bearman" : .red
+]
+
+extension Color {
+    static let lightBlue = Color(red: 173 / 255, green: 216 / 255, blue: 230 / 255)
+    static let mercedes = Color(red: 39/255.0, green: 244/255.0, blue: 210/255.0)
+}
+
 struct DriversView: View {
     @EnvironmentObject var driverStandingsModel: DriverStandingsModel
     
@@ -16,7 +51,7 @@ struct DriversView: View {
                 DriverStandingView(driverStanding: driverStanding)
             }
         }
-        .navigationTitle("Drivers")
+        .navigationTitle("F1 Drivers 2024")
         .navigationBarTitleDisplayMode(.large)
         .onAppear {
             Task {
@@ -40,7 +75,7 @@ struct DriverStandingView: View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
                 Rectangle()
-                    .fill(.blue)
+                    .fill(driverTeamColors[driverStanding.driver.driverId] ?? .blue)
                     .frame(width: 5)
                 
                 VStack(alignment: .leading) {

@@ -39,6 +39,7 @@ class DriversInfoImages: ObservableObject {
         DriversImages(driverImage: "zhou", driverCountryImage: "china")
     ]
     
+    /// Normalize the driver IDs and the images’ names to remove diacritics (accent marks). This can be done using the folding method in Swift to compare strings without considering diacritics.
     func normalize(_ string: String) -> String {
         return string.folding(options: .diacriticInsensitive, locale: .current).lowercased()
     }
