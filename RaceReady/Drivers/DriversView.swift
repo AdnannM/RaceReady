@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DriversView: View {
+    
+    
     var body: some View {
         List {
             VStack(alignment: .leading) {
@@ -43,6 +45,9 @@ struct DriversView: View {
                     Text("1")
                         .font(.custom("MarkerFelt", size: 50))
                         .bold()
+                    
+                    Image("lec")
+                        .aspectRatio(contentMode: .fit)
                     
                     Spacer()
                     
