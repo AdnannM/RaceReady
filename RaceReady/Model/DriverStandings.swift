@@ -46,6 +46,8 @@ struct DriverStanding: Codable {
     let wins: String
     let driver: DriverData
     let constructors: [ConstructorData]
+    var driverImage: String?
+    var driverCountryImage: String?
     
     enum CodingKeys: String, CodingKey {
         case position, positionText, points, wins

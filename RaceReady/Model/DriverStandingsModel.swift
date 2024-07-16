@@ -15,8 +15,11 @@ class DriverStandingsModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
-    init(webservice: WebService) {
+    let driversInfoImages: DriversInfoImages
+    
+    init(webservice: WebService, driversInfoImages: DriversInfoImages = DriversInfoImages()) {
         self.webservice = webservice
+        self.driversInfoImages = driversInfoImages
         Task {
             await self.populateDriverStandings()
         }
@@ -27,7 +30,15 @@ class DriverStandingsModel: ObservableObject {
         errorMessage = nil
         
         do {
-            self.driverStandings = try await webservice.fetchDriversStandings()
+            let fetchedDriverStandings = try await webservice.fetchDriversStandings()
+            self.driverStandings = fetchedDriverStandings.map { driverStanding in
+                var mutableDriverStanding = driverStanding
+                if let images = driversInfoImages.findImages(for: driverStanding.driver.driverId) {
+                    mutableDriverStanding.driverImage = images.driverImage
+                    mutableDriverStanding.driverCountryImage = images.driverCountryImage
+                }
+                return mutableDriverStanding
+            }
         } catch {
             handleFetchError(error)
         }

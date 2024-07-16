@@ -27,8 +27,10 @@ struct DriversView: View {
 }
 
 #Preview {
-    DriversView()
-        .environmentObject(DriverStandingsModel(webservice: WebService()))
+    NavigationStack {
+        DriversView()
+            .environmentObject(DriverStandingsModel(webservice: WebService()))
+    }
 }
 
 struct DriverStandingView: View {
@@ -53,7 +55,7 @@ struct DriverStandingView: View {
                 
                 Spacer()
                 
-                Image("austria")
+                Image(driverStanding.driverCountryImage ?? "")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 50)
@@ -68,7 +70,7 @@ struct DriverStandingView: View {
                     .frame(width: 60)
                     .bold()
                 
-                Image("newLec")
+                Image(driverStanding.driverImage ?? "")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 180, height: 200)
