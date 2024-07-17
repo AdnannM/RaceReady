@@ -40,7 +40,14 @@ struct DriverStandingView: View {
             
             Divider()
             
+            if let teamName = driverStanding.constructors.first?.name {
+                Text(teamName)
+                    .font(.headline)
+                    .foregroundStyle(.secondary)
+            }
+            
             HStack(alignment: .center) {
+                
                 Text(driverStanding.position)
                     .font(.custom("MarkerFelt", size: 50))
                     .frame(width: 60)
@@ -77,5 +84,12 @@ struct DriverStandingView: View {
             }
             .padding(.bottom, 10)
         }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        DriversView()
+            .environmentObject(DriverStandingsModel(webservice: WebService()))
     }
 }
