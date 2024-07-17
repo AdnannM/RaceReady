@@ -86,10 +86,3 @@ struct DriverStandingView: View {
         }
     }
 }
-
-#Preview {
-    NavigationStack {
-        DriversView()
-            .environmentObject(DriverStandingsModel(webservice: WebService()))
-    }
-}
