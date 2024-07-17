@@ -46,6 +46,8 @@
 		A68F31C72C328F7300891992 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31C62C328F7300891992 /* WebService.swift */; };
 		A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31C82C328F9700891992 /* SeasonModel.swift */; };
 		A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F31D02C32FB0900891992 /* RaceDetailView.swift */; };
+		A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */; };
+		A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */; };
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
@@ -98,6 +100,8 @@
 		A68F31C62C328F7300891992 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A68F31C82C328F9700891992 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
 		A68F31D02C32FB0900891992 /* RaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceDetailView.swift; sourceTree = "<group>"; };
+		A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTeamColors.swift; sourceTree = "<group>"; };
+		A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsView.swift; sourceTree = "<group>"; };
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				A644CBA32C4678760064FE50 /* DriverStandings.swift */,
 				A644CBA52C467EF20064FE50 /* DriverStandingsModel.swift */,
 				A644CBA72C46A6B00064FE50 /* DriversImages.swift */,
+				A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				A653F5932C42894F00D42CCF /* DriversView.swift */,
+				A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */,
 			);
 			path = Drivers;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				A68F31C72C328F7300891992 /* WebService.swift in Sources */,
 				A644CBA42C4678760064FE50 /* DriverStandings.swift in Sources */,
 				A67382F72C30B75000105868 /* TabbedItems.swift in Sources */,
+				A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */,
 				A607479B2C3FEEFC007679D6 /* RaceResultModel.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
 				A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */,
@@ -448,6 +455,7 @@
 				A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */,
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
 				A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */,
+				A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */,
 				A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */,
 				A653F5942C42894F00D42CCF /* DriversView.swift in Sources */,
 				A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */,
