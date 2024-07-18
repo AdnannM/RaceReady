@@ -54,6 +54,8 @@
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
 		A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9922C3739F8007663AD /* RaceCellView.swift */; };
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
+		A6F8649D2C49149300F69C0B /* ConstructorStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F8649C2C49149300F69C0B /* ConstructorStandings.swift */; };
+		A6F8649F2C4917C700F69C0B /* ConstructorsStandingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F8649E2C4917C700F69C0B /* ConstructorsStandingsModel.swift */; };
 		A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */; };
 		A6FDD9C32C38224E00B2CBFF /* WelcomeComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */; };
 		A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */; };
@@ -109,6 +111,8 @@
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
 		A6C8A9922C3739F8007663AD /* RaceCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCellView.swift; sourceTree = "<group>"; };
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
+		A6F8649C2C49149300F69C0B /* ConstructorStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandings.swift; sourceTree = "<group>"; };
+		A6F8649E2C4917C700F69C0B /* ConstructorsStandingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorsStandingsModel.swift; sourceTree = "<group>"; };
 		A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeComponentsView.swift; sourceTree = "<group>"; };
 		A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSectionView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				A644CBA72C46A6B00064FE50 /* DriversImages.swift */,
 				A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */,
 				A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */,
+				A6F8649C2C49149300F69C0B /* ConstructorStandings.swift */,
+				A6F8649E2C4917C700F69C0B /* ConstructorsStandingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,9 +425,11 @@
 				A61706782C3D8E61003182FA /* CountdownView.swift in Sources */,
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
 				A653F5982C42906300D42CCF /* NewsView.swift in Sources */,
+				A6F8649D2C49149300F69C0B /* ConstructorStandings.swift in Sources */,
 				A653F5962C428AF100D42CCF /* TeamsView.swift in Sources */,
 				A644CBA62C467EF20064FE50 /* DriverStandingsModel.swift in Sources */,
 				A61706702C3D529D003182FA /* RaceTimmerView.swift in Sources */,
+				A6F8649F2C4917C700F69C0B /* ConstructorsStandingsModel.swift in Sources */,
 				A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */,
 				A62DC3F32C413336002C9C67 /* RoundCorners+Extension.swift in Sources */,
 				A617067A2C3D8E78003182FA /* TimeUnitView.swift in Sources */,

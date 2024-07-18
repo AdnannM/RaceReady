@@ -27,6 +27,15 @@ let driverTeamColors: [String: Color] = [
     "albon": .williams,
     "sargeant": .williams,
     "ricciardo": .rb,
-    "tsunoda" : .rb,
-    "bearman" : .ferrari
+    "tsunoda": .rb,
+    "bearman": .ferrari,
+    "red bull racing": .redBull,
+    "mercedes": .mercedes,
+    "ferrari": .ferrari,
+    "mclaren": .mclaren,
+    "alpine": .alpine,
+    "haas": .haas,
+    "aston martin": .astonMartin,
+    "williams": .williams,
+    "sauber": .sauber
 ]

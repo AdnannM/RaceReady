@@ -22,6 +22,8 @@ struct APIConstants {
     static let limit = 30
     
     static let driverStandings = "current/driverStandings.json"
+    
+    static let constructorsStandigs = "current/constructorStandings.json"
 }
 
 ///// Networking errors that may occur during API requests.
@@ -92,7 +94,7 @@ struct WebService {
         return allRaceResults
     }
     
-    /// Fetches driver standings for current seaseon
+    /// Fetches driver standings for current season
     /// - Returns: An array of `DriverStanding` object representing the current standings for this season
     /// - Throws: A `NetworkingError` if there is an issuse with the network request or decoding the response
     func fetchDriversStandings() async throws -> [DriverStanding] {
@@ -100,6 +102,15 @@ struct WebService {
          let driverStandings = try await fetchData(from: url, decodingTo: DriverStandings.self)
          return driverStandings.mrData.standingsTable.standingsLists.first?.driverStandings ?? []
      }
+    
+    /// Fetches teams standigs for current season
+    /// - Returns: An array of `ConstructorsStanding` object representing the current standings for this season
+    /// - Throws: A `NetworkingError` if there is an issuse with the network request or decoding the response
+    func fetchConstructorsStandings() async throws -> [ConstructorStandingModel] {
+        let url = APIConstants.baseURL.appendingPathComponent(APIConstants.constructorsStandigs)
+        let constructorsStandings = try await fetchData(from: url, decodingTo: ConstructorStandings.self)
+        return constructorsStandings.mrData.standingsTable.standingsLists.first?.constructorStandings ?? []
+    }
     
     /// Fetches and decodes data from a given URL.
     /// - Parameters:

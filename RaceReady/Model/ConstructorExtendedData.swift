@@ -42,7 +42,7 @@ class ConstructorExtendedModel: ObservableObject {
             teamLogoImage: "rbLogo", teamCarImage: "rb", teamDriverOne: "Yuki Tsunoda", teamDriverTwo: "Daniel Ricciardo"
         ),
         ConstructorExtendedData(
-            teamLogoImage: "alphineLogo", teamCarImage: "alphine", teamDriverOne: "Pierre Gasly", teamDriverTwo: "Esteban Ocon"
+            teamLogoImage: "aplipneLogo", teamCarImage: "alpine", teamDriverOne: "Pierre Gasly", teamDriverTwo: "Esteban Ocon"
         ),
         ConstructorExtendedData(
             teamLogoImage: "williamsLogo", teamCarImage: "williams", teamDriverOne: "Alexander Albon", teamDriverTwo: "Logan Sargeant"
