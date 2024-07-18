@@ -18,22 +18,40 @@ struct DriversView: View {
     @EnvironmentObject var driverStandingsModel: DriverStandingsModel
     
     var body: some View {
-        List {
-            ForEach(driverStandingsModel.driverStandings, id: \.driver.driverId) { driverStanding in
-                DriverStandingView(driverStanding: driverStanding)
+        Group {
+            if driverStandingsModel.isLoading {
+                ProgressView("Loading drivers...")
+            } else if let errorMessage = driverStandingsModel.errorMessage {
+                ErrorView(errorMessage: errorMessage) {
+                    Task {
+                        await driverStandingsModel.populateDriverStandings()
+                    }
+                }
+            } else if driverStandingsModel.driverStandings.isEmpty {
+                Text("No driver standings available")
+                    .foregroundColor(.secondary)
+            } else {
+                List {
+                    ForEach(driverStandingsModel.driverStandings, id: \.driver.driverId) { driverStanding in
+                        DriverStandingView(driverStanding: driverStanding)
+                    }
+                }
             }
         }
         .navigationTitle("F1 Drivers 2024")
         .navigationBarTitleDisplayMode(.large)
         .onAppear {
-            Task {
-                await driverStandingsModel.populateDriverStandings()
+            if driverStandingsModel.driverStandings.isEmpty {
+                Task {
+                    await driverStandingsModel.populateDriverStandings()
+                }
             }
         }
     }
 }
 
-#Preview {
+
+#Preview("Drivers View") {
     NavigationStack {
         DriversView()
             .environmentObject(DriverStandingsModel(webservice: WebService()))

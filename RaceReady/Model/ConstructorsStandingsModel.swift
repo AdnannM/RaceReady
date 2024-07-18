@@ -31,7 +31,6 @@ class ConstructorsStandingsModel: ObservableObject {
                 for index in standings.indices {
                     let name = standings[index].constructor.name
                     let normalizedName = normalizeTeamName(name)
-                    print("Original name: \(name), Normalized name: \(normalizedName)")
                     if let extendedData = constructorExtendedModel.constructorExtendedData[normalizedName] {
                         standings[index].teamLogoImage = extendedData.teamLogoImage
                         standings[index].teamCarImage = extendedData.teamCarImage
@@ -42,10 +41,6 @@ class ConstructorsStandingsModel: ObservableObject {
                     }
                 }
                 self.constructorStanding = standings
-                print("Fetched \(self.constructorStanding.count) standings")
-                
-                // Debug: Print all team names
-                print("Teams: \(standings.map { $0.constructor.name }.joined(separator: ", "))")
             } catch {
                 self.error = error
                 print("Error fetching standings: \(error.localizedDescription)")

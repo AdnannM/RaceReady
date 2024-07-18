@@ -13,24 +13,38 @@ import SwiftUI
 /// - Refactor the code and make it more readable
 
 struct TeamsView: View {
-    
     @EnvironmentObject var constructorsStandingsModel: ConstructorsStandingsModel
     
     var body: some View {
-        
-        List {
-            ForEach(constructorsStandingsModel.constructorStanding, id: \.constructor.name) { constructorStanding in
-                ConstructorStaindingView(constructorStandigs: constructorStanding)
+        Group {
+            if constructorsStandingsModel.isLoading {
+                ProgressView("Loading teams...")
+            } else if let error = constructorsStandingsModel.error {
+                ErrorView(errorMessage: error.localizedDescription) {
+                    Task {
+                         constructorsStandingsModel.populateConstructorsStandings()
+                    }
+                }
+            } else if constructorsStandingsModel.constructorStanding.isEmpty {
+                Text("No team standings available")
+                    .foregroundColor(.secondary)
+            } else {
+                List {
+                    ForEach(constructorsStandingsModel.constructorStanding, id: \.constructor.name) { constructorStanding in
+                        ConstructorStaindingView(constructorStandigs: constructorStanding)
+                    }
+                }
             }
         }
-        
         .navigationTitle("F1 Teams 2024")
         .navigationBarTitleDisplayMode(.large)
-        .onAppear(perform: {
-            Task {
-                constructorsStandingsModel.populateConstructorsStandings()
+        .onAppear {
+            if constructorsStandingsModel.constructorStanding.isEmpty {
+                Task {
+                     constructorsStandingsModel.populateConstructorsStandings()
+                }
             }
-        })
+        }
     }
 }
 
@@ -42,88 +56,3 @@ struct TeamsView: View {
     }
 }
 
-struct ConstructorStaindingView: View {
-    
-    let constructorStandigs: ConstructorStandingModel
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Text(constructorStandigs.position)
-                    .font(.custom("MarkerFelt", size: 50))
-                    .frame(width: 60)
-                    .bold()
-                
-                Spacer()
-                
-                VStack(alignment: .center, spacing: 0) {
-                    Text(constructorStandigs.points)
-                        .font(.custom("MarkerFelt-Wide", size: 25))
-                        .bold()
-                        .background(
-                            GeometryReader { geometry in
-                                Color.clear.preference(key: WidthPreferenceKey.self, value: geometry.size.width)
-                            }
-                        )
-                    Text("PTS")
-                        .padding(3)
-                        .font(.custom("MarkerFelt-Wide", size: 13))
-                        .foregroundStyle(.secondary)
-                        .bold()
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(Color("ColorBlue").opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-                .frame(width: 50)
-                .onPreferenceChange(WidthPreferenceKey.self) { width in
-                    print("Width of '239' text: \(width)")
-                }
-            }
-            .padding(.leading, -25)
-            .padding(.top)
-            .padding(.bottom)
-            
-            Divider()
-            
-            HStack {
-                Rectangle()
-                    .fill(driverTeamColors[constructorStandigs.constructor.name.lowercased()] ?? .blue)
-                    .frame(width: 5)
-                
-                Text(constructorStandigs.constructor.name)
-                    .bold()
-                    .font(.title)
-                
-                Spacer()
-                
-                if let logoImage = constructorStandigs.teamLogoImage {
-                    Image(logoImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                }
-            }
-            
-            .padding(.top)
-            .padding(.bottom)
-            
-            Divider()
-            
-            if let teamCarImage = constructorStandigs.teamCarImage {
-                Image(teamCarImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
-        
-            HStack {
-                Text(constructorStandigs.teamDriverOne ?? "")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Text(constructorStandigs.teamDriverTwo ?? "")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
-            }
-        }
-    }
-}

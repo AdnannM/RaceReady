@@ -56,6 +56,8 @@
 		A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DFCFCF2C33F29800028113 /* CircuitData.swift */; };
 		A6F8649D2C49149300F69C0B /* ConstructorStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F8649C2C49149300F69C0B /* ConstructorStandings.swift */; };
 		A6F8649F2C4917C700F69C0B /* ConstructorsStandingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F8649E2C4917C700F69C0B /* ConstructorsStandingsModel.swift */; };
+		A6F864A12C498AD300F69C0B /* ConstructorStaindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F864A02C498AD300F69C0B /* ConstructorStaindingView.swift */; };
+		A6F864A42C498B0B00F69C0B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F864A32C498B0B00F69C0B /* ErrorView.swift */; };
 		A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */; };
 		A6FDD9C32C38224E00B2CBFF /* WelcomeComponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */; };
 		A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */; };
@@ -113,6 +115,8 @@
 		A6DFCFCF2C33F29800028113 /* CircuitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitData.swift; sourceTree = "<group>"; };
 		A6F8649C2C49149300F69C0B /* ConstructorStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStandings.swift; sourceTree = "<group>"; };
 		A6F8649E2C4917C700F69C0B /* ConstructorsStandingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorsStandingsModel.swift; sourceTree = "<group>"; };
+		A6F864A02C498AD300F69C0B /* ConstructorStaindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorStaindingView.swift; sourceTree = "<group>"; };
+		A6F864A32C498B0B00F69C0B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A6FDD9C02C38222B00B2CBFF /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		A6FDD9C22C38224E00B2CBFF /* WelcomeComponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeComponentsView.swift; sourceTree = "<group>"; };
 		A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSectionView.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		A6063FC82C2F4250009C3AAB /* RaceReady */ = {
 			isa = PBXGroup;
 			children = (
+				A6F864A22C498AFF00F69C0B /* ErrorView */,
 				A61706712C3D8DC7003182FA /* ViewModel */,
 				A617066C2C3D4086003182FA /* Utils */,
 				A6FDD9BF2C37D48500B2CBFF /* Onboarding */,
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				A653F5952C428AF100D42CCF /* TeamsView.swift */,
+				A6F864A02C498AD300F69C0B /* ConstructorStaindingView.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -339,6 +345,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		A6F864A22C498AFF00F69C0B /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				A6F864A32C498B0B00F69C0B /* ErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
 		A6FDD9BF2C37D48500B2CBFF /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,9 +446,11 @@
 				A6F8649F2C4917C700F69C0B /* ConstructorsStandingsModel.swift in Sources */,
 				A61706682C3D3C6E003182FA /* CircuitInfoView.swift in Sources */,
 				A62DC3F32C413336002C9C67 /* RoundCorners+Extension.swift in Sources */,
+				A6F864A42C498B0B00F69C0B /* ErrorView.swift in Sources */,
 				A617067A2C3D8E78003182FA /* TimeUnitView.swift in Sources */,
 				A6FDD9C72C3822BF00B2CBFF /* WelcomeMainContentView.swift in Sources */,
 				A61B8D062C3E759300F75612 /* RaceResultsView.swift in Sources */,
+				A6F864A12C498AD300F69C0B /* ConstructorStaindingView.swift in Sources */,
 				A62DC3F72C415211002C9C67 /* DriversData.swift in Sources */,
 				A68F31C72C328F7300891992 /* WebService.swift in Sources */,
 				A644CBA42C4678760064FE50 /* DriverStandings.swift in Sources */,
