@@ -38,10 +38,9 @@ struct TeamsView: View {
 #Preview {
     NavigationStack {
         TeamsView()
-            .environmentObject(ConstructorsStandingsModel(webservice: WebService()))
+            .environmentObject(ConstructorsStandingsModel(webservice: WebService(), constructorExtendedModel: ConstructorExtendedModel()))
     }
 }
-
 
 struct ConstructorStaindingView: View {
     
@@ -94,14 +93,15 @@ struct ConstructorStaindingView: View {
                 Text(constructorStandigs.constructor.name)
                     .bold()
                     .font(.title)
-
+                
                 Spacer()
                 
-                Image("redBullLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-                
+                if let logoImage = constructorStandigs.teamLogoImage {
+                    Image(logoImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                }
             }
             
             .padding(.top)
@@ -109,16 +109,18 @@ struct ConstructorStaindingView: View {
             
             Divider()
             
-            Image("redBull")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
+            if let teamCarImage = constructorStandigs.teamCarImage {
+                Image(teamCarImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        
             HStack {
-                Text("Max Verstaphen")
+                Text(constructorStandigs.teamDriverOne ?? "")
                     .font(.headline)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Text("Sergio Perez")
+                Text(constructorStandigs.teamDriverTwo ?? "")
                     .font(.headline)
                     .foregroundStyle(.secondary)
             }

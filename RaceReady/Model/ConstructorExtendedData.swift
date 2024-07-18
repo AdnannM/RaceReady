@@ -8,47 +8,45 @@
 import Foundation
 
 struct ConstructorExtendedData {
-    
     var teamLogoImage: String
     var teamCarImage: String
     var teamDriverOne: String
     var teamDriverTwo: String
-    
 }
 
 
+
 class ConstructorExtendedModel: ObservableObject {
-    
-    @Published var constructorExtendedData: [ConstructorExtendedData] = [
-        ConstructorExtendedData(
+    @Published var constructorExtendedData: [String: ConstructorExtendedData] = [
+        "Red Bull Racing": ConstructorExtendedData(
             teamLogoImage: "redBullLogo", teamCarImage: "redBull", teamDriverOne: "Max Verstappen", teamDriverTwo: "Sergio Perez"
         ),
-        ConstructorExtendedData(
+        "Ferrari": ConstructorExtendedData(
             teamLogoImage: "ferrariLogo", teamCarImage: "ferrari", teamDriverOne: "Charles Leclerc", teamDriverTwo: "Carlos Sainz"
         ),
-        ConstructorExtendedData(
+        "McLaren": ConstructorExtendedData(
             teamLogoImage: "mclarenLogo", teamCarImage: "mclaren", teamDriverOne: "Lando Norris", teamDriverTwo: "Oscar Piastri"
         ),
-        ConstructorExtendedData(
+        "Mercedes": ConstructorExtendedData(
             teamLogoImage: "mercedesLogo", teamCarImage: "mercedes", teamDriverOne: "George Russell", teamDriverTwo: "Lewis Hamilton"
         ),
-        ConstructorExtendedData(
+        "Aston Martin": ConstructorExtendedData(
             teamLogoImage: "astonMartinLogo", teamCarImage: "astonMartin", teamDriverOne: "Fernando Alonso", teamDriverTwo: "Lance Stroll"
         ),
-        ConstructorExtendedData(
+        "Haas": ConstructorExtendedData(
             teamLogoImage: "haasLogo", teamCarImage: "haas", teamDriverOne: "Nico Hulkenberg", teamDriverTwo: "Kevin Magnussen"
         ),
-        ConstructorExtendedData(
+        "RB F1 Team": ConstructorExtendedData(
             teamLogoImage: "rbLogo", teamCarImage: "rb", teamDriverOne: "Yuki Tsunoda", teamDriverTwo: "Daniel Ricciardo"
         ),
-        ConstructorExtendedData(
-            teamLogoImage: "aplipneLogo", teamCarImage: "alpine", teamDriverOne: "Pierre Gasly", teamDriverTwo: "Esteban Ocon"
+        "Alpine": ConstructorExtendedData(
+            teamLogoImage: "alpineLogo", teamCarImage: "alpine", teamDriverOne: "Pierre Gasly", teamDriverTwo: "Esteban Ocon"
         ),
-        ConstructorExtendedData(
+        "Williams": ConstructorExtendedData(
             teamLogoImage: "williamsLogo", teamCarImage: "williams", teamDriverOne: "Alexander Albon", teamDriverTwo: "Logan Sargeant"
         ),
-        ConstructorExtendedData(
-            teamLogoImage: "sauberLogo", teamCarImage: "sauber", teamDriverOne: "Zhou Guanyu", teamDriverTwo: "Valtteri Bottas"
-        ),
+        "Sauber": ConstructorExtendedData(
+            teamLogoImage: "sauberLogo", teamCarImage: "sauber", teamDriverOne: "Valtteri Bottas", teamDriverTwo: "Zhou Guanyu"
+        )
     ]
 }

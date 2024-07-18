@@ -39,10 +39,15 @@ struct StandingsConstructorList: Codable {
     }
 }
 
-struct ConstructorStandingModel: Codable {
+struct ConstructorStandingModel: Codable, Identifiable {
+    let id = UUID()
     let position: String
     let points: String
     let constructor: ConstructorInfo
+    var teamLogoImage: String?
+    var teamCarImage: String?
+    var teamDriverOne: String?
+    var teamDriverTwo: String?
     
     enum CodingKeys: String, CodingKey {
         case position
