@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-/// TODO:
-/// - Fetch data from Api and display postion points and team name
-/// - Combine stored data with api and display  drivers name team logo and f1 team car
-/// - Refactor the code and make it more readable
-
 struct TeamsView: View {
     @EnvironmentObject var constructorsStandingsModel: ConstructorsStandingsModel
     
