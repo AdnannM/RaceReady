@@ -37,12 +37,12 @@ struct MainTabbedView: View {
             .tag(Tab.teams)
             
             NavigationStack {
-                NewsView()
+                SettingsView()
             }
             .tabItem {
-                Label(Tab.news.rawValue, systemImage: Tab.news.systemImage)
+                Label(Tab.settings.rawValue, systemImage: Tab.settings.systemImage)
             }
-            .tag(Tab.news)
+            .tag(Tab.settings)
         }
     }
 }

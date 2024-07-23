@@ -38,7 +38,6 @@
 		A644CBA82C46A6B00064FE50 /* DriversImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA72C46A6B00064FE50 /* DriversImages.swift */; };
 		A653F5942C42894F00D42CCF /* DriversView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5932C42894F00D42CCF /* DriversView.swift */; };
 		A653F5962C428AF100D42CCF /* TeamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5952C428AF100D42CCF /* TeamsView.swift */; };
-		A653F5982C42906300D42CCF /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653F5972C42906300D42CCF /* NewsView.swift */; };
 		A66BE8552C3450FD00FA0695 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66BE8542C3450FD00FA0695 /* ShimmerView.swift */; };
 		A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */; };
 		A67382F72C30B75000105868 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67382F62C30B75000105868 /* TabbedItems.swift */; };
@@ -49,6 +48,8 @@
 		A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */; };
 		A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */; };
 		A6A3BD6D2C4804A30034626F /* ConstructorExtendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */; };
+		A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */; };
+		A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B02C4FA5260021B655 /* SettingsView.swift */; };
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
@@ -97,7 +98,6 @@
 		A644CBA72C46A6B00064FE50 /* DriversImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversImages.swift; sourceTree = "<group>"; };
 		A653F5932C42894F00D42CCF /* DriversView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversView.swift; sourceTree = "<group>"; };
 		A653F5952C428AF100D42CCF /* TeamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsView.swift; sourceTree = "<group>"; };
-		A653F5972C42906300D42CCF /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		A66BE8542C3450FD00FA0695 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
 		A67382F42C30B6F900105868 /* MainTabbedView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabbedView+Extension.swift"; sourceTree = "<group>"; };
 		A67382F62C30B75000105868 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
@@ -108,6 +108,8 @@
 		A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTeamColors.swift; sourceTree = "<group>"; };
 		A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsView.swift; sourceTree = "<group>"; };
 		A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorExtendedData.swift; sourceTree = "<group>"; };
+		A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingslabelView.swift; sourceTree = "<group>"; };
+		A6C330B02C4FA5260021B655 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
@@ -162,7 +164,6 @@
 				A6063FE62C2F6C06009C3AAB /* Extension */,
 				A6063FE52C2F6BFD009C3AAB /* Client */,
 				A6063FE42C2F6BED009C3AAB /* Settings */,
-				A6063FE32C2F6BE6009C3AAB /* News */,
 				A6063FE22C2F6BDD009C3AAB /* Teams */,
 				A6063FE12C2F6BD4009C3AAB /* Drivers */,
 				A6063FE02C2F6BC6009C3AAB /* Race */,
@@ -245,17 +246,11 @@
 			path = Teams;
 			sourceTree = "<group>";
 		};
-		A6063FE32C2F6BE6009C3AAB /* News */ = {
-			isa = PBXGroup;
-			children = (
-				A653F5972C42906300D42CCF /* NewsView.swift */,
-			);
-			path = News;
-			sourceTree = "<group>";
-		};
 		A6063FE42C2F6BED009C3AAB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */,
+				A6C330B02C4FA5260021B655 /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -438,7 +433,6 @@
 				A617067C2C3D903D003182FA /* RotatingClockView.swift in Sources */,
 				A61706782C3D8E61003182FA /* CountdownView.swift in Sources */,
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
-				A653F5982C42906300D42CCF /* NewsView.swift in Sources */,
 				A6F8649D2C49149300F69C0B /* ConstructorStandings.swift in Sources */,
 				A653F5962C428AF100D42CCF /* TeamsView.swift in Sources */,
 				A644CBA62C467EF20064FE50 /* DriverStandingsModel.swift in Sources */,
@@ -456,6 +450,7 @@
 				A644CBA42C4678760064FE50 /* DriverStandings.swift in Sources */,
 				A67382F72C30B75000105868 /* TabbedItems.swift in Sources */,
 				A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */,
+				A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */,
 				A607479B2C3FEEFC007679D6 /* RaceResultModel.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
 				A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */,
@@ -483,6 +478,7 @@
 				A68F31D12C32FB0900891992 /* RaceDetailView.swift in Sources */,
 				A6DFCFD02C33F29800028113 /* CircuitData.swift in Sources */,
 				A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */,
+				A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */,
 				A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */,
 				A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */,
 				A653F5942C42894F00D42CCF /* DriversView.swift in Sources */,

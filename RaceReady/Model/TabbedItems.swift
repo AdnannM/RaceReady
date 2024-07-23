@@ -11,7 +11,7 @@ enum Tab: String, CaseIterable {
     case season = "Season"
     case driver = "Driver"
     case teams = "Teams"
-    case news = "News"
+    case settings = "Settings"
     
     var systemImage: String {
         switch self {
@@ -21,8 +21,8 @@ enum Tab: String, CaseIterable {
             return "person.3.fill"
         case .teams:
             return "car.rear.road.lane"
-        case .news:
-            return "newspaper.fill"
+        case .settings:
+            return "slider.horizontal.3"
         }
     }
 }
