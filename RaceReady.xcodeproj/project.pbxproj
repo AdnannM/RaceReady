@@ -51,6 +51,7 @@
 		A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */; };
 		A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B02C4FA5260021B655 /* SettingsView.swift */; };
 		A6C330B32C4FB99B0021B655 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */; };
+		A6C330B52C4FC52B0021B655 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B42C4FC52B0021B655 /* TODO.swift */; };
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
@@ -112,6 +113,7 @@
 		A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingslabelView.swift; sourceTree = "<group>"; };
 		A6C330B02C4FA5260021B655 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		A6C330B42C4FC52B0021B655 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A6063FCD2C2F4252009C3AAB /* Assets.xcassets */,
 				A6063FCF2C2F4252009C3AAB /* Preview Content */,
 				A6098FEF2C3BBA13007AE159 /* Launch Screen.storyboard */,
+				A6C330B42C4FC52B0021B655 /* TODO.swift */,
 			);
 			path = RaceReady;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C330B52C4FC52B0021B655 /* TODO.swift in Sources */,
 				A617067C2C3D903D003182FA /* RotatingClockView.swift in Sources */,
 				A61706782C3D8E61003182FA /* CountdownView.swift in Sources */,
 				A68F31C92C328F9700891992 /* SeasonModel.swift in Sources */,
