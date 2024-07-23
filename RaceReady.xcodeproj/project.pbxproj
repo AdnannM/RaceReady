@@ -50,6 +50,7 @@
 		A6A3BD6D2C4804A30034626F /* ConstructorExtendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */; };
 		A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */; };
 		A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B02C4FA5260021B655 /* SettingsView.swift */; };
+		A6C330B32C4FB99B0021B655 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */; };
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
@@ -110,6 +111,7 @@
 		A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorExtendedData.swift; sourceTree = "<group>"; };
 		A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingslabelView.swift; sourceTree = "<group>"; };
 		A6C330B02C4FA5260021B655 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */,
 				A6C330B02C4FA5260021B655 /* SettingsView.swift */,
+				A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */,
 				A6063FCC2C2F4251009C3AAB /* ContentView.swift in Sources */,
 				A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */,
+				A6C330B32C4FB99B0021B655 /* SettingsRowView.swift in Sources */,
 				A6063FDB2C2F4C7C009C3AAB /* MainTabbedView.swift in Sources */,
 				A6063FD92C2F4C25009C3AAB /* WelcomeView.swift in Sources */,
 				A67382F52C30B6F900105868 /* MainTabbedView+Extension.swift in Sources */,

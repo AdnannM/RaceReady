@@ -29,6 +29,27 @@ struct SettingsView: View {
                                 .font(.footnote)
                         }
                     }
+                    
+                    GroupBox(
+                        label: SettingslabelView(labelText: "Social Media", image: "apps.iphone")
+                    ){
+                        SettingsRowView(name: "Insagram", linkLabel: "@RaceReady", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "Twitter", linkLabel: "@RaceReady", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "YouTube", linkLabel: "@RaceReady", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "Facebook", linkLabel: "@RaceReady", linkDestination: "https://www.google.com")
+                    }
+                    
+                    GroupBox(
+                        label: SettingslabelView(labelText: "Application", image: "iphone")
+                    ) {
+                        SettingsRowView(name: "Developer", content: "Adnan Muratovic")
+                        SettingsRowView(name: "Compatibility", content: "iOS 15")
+                        SettingsRowView(name: "Webiste", linkLabel: "Race Ready", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "Privacy Policy", linkLabel: "Race Ready", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "Terms and Conditions", linkLabel: "Race Ready", linkDestination: "https://www.google.com")
+                        SettingsRowView(name: "SwiftUI", content: "2.0")
+                        SettingsRowView(name: "Version", content: "1.0.1")
+                    }
                 }
                 .navigationBarTitle(Text("Settings"), displayMode: .large)
                 .padding()
