@@ -13,7 +13,7 @@ struct TeamsView: View {
     var body: some View {
         Group {
             if constructorsStandingsModel.isLoading {
-                ProgressView("Loading teams...")
+                DotLoader(loadingText: "Loading teams...")
             } else if let error = constructorsStandingsModel.error {
                 ErrorView(errorMessage: error.localizedDescription) {
                     Task {

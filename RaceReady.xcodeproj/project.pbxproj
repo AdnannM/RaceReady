@@ -53,6 +53,15 @@
 		A6C330B32C4FB99B0021B655 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */; };
 		A6C330B52C4FC52B0021B655 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B42C4FC52B0021B655 /* TODO.swift */; };
 		A6C330B82C50E9BC0021B655 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B72C50E9BC0021B655 /* NotificationManager.swift */; };
+		A6C330C02C5108070021B655 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C330BF2C5108070021B655 /* WidgetKit.framework */; };
+		A6C330C22C5108070021B655 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C330C12C5108070021B655 /* SwiftUI.framework */; };
+		A6C330C52C5108070021B655 /* RaceReadyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330C42C5108070021B655 /* RaceReadyWidgetBundle.swift */; };
+		A6C330C72C5108070021B655 /* RaceReadyWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330C62C5108070021B655 /* RaceReadyWidgetLiveActivity.swift */; };
+		A6C330C92C5108070021B655 /* RaceReadyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330C82C5108070021B655 /* RaceReadyWidget.swift */; };
+		A6C330CB2C5108070021B655 /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330CA2C5108070021B655 /* AppIntent.swift */; };
+		A6C330CD2C5108090021B655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6C330CC2C5108090021B655 /* Assets.xcassets */; };
+		A6C330D12C5108090021B655 /* RaceReadyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A6C330BD2C5108070021B655 /* RaceReadyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A6C330DC2C513B490021B655 /* DotLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330DB2C513B490021B655 /* DotLoader.swift */; };
 		A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98C2C369F84007663AD /* RaceView.swift */; };
 		A6C8A98F2C36EA10007663AD /* RaceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A98E2C36EA10007663AD /* RaceCard.swift */; };
 		A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C8A9902C36EA43007663AD /* RaceRow.swift */; };
@@ -67,6 +76,30 @@
 		A6FDD9C52C38228000B2CBFF /* WelcomeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C42C38228000B2CBFF /* WelcomeSectionView.swift */; };
 		A6FDD9C72C3822BF00B2CBFF /* WelcomeMainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD9C62C3822BF00B2CBFF /* WelcomeMainContentView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6C330CF2C5108090021B655 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6063FBE2C2F4250009C3AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6C330BC2C5108070021B655;
+			remoteInfo = RaceReadyWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6C330D52C5108090021B655 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A6C330D12C5108090021B655 /* RaceReadyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A6063FC62C2F4250009C3AAB /* RaceReady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceReady.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +149,16 @@
 		A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		A6C330B42C4FC52B0021B655 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		A6C330B72C50E9BC0021B655 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A6C330BD2C5108070021B655 /* RaceReadyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RaceReadyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6C330BF2C5108070021B655 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A6C330C12C5108070021B655 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A6C330C42C5108070021B655 /* RaceReadyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyWidgetBundle.swift; sourceTree = "<group>"; };
+		A6C330C62C5108070021B655 /* RaceReadyWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		A6C330C82C5108070021B655 /* RaceReadyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyWidget.swift; sourceTree = "<group>"; };
+		A6C330CA2C5108070021B655 /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		A6C330CC2C5108090021B655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6C330CE2C5108090021B655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C330DB2C513B490021B655 /* DotLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoader.swift; sourceTree = "<group>"; };
 		A6C8A98C2C369F84007663AD /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		A6C8A98E2C36EA10007663AD /* RaceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCard.swift; sourceTree = "<group>"; };
 		A6C8A9902C36EA43007663AD /* RaceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceRow.swift; sourceTree = "<group>"; };
@@ -139,6 +182,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6C330BA2C5108070021B655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C330C22C5108070021B655 /* SwiftUI.framework in Frameworks */,
+				A6C330C02C5108070021B655 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				A6063FC82C2F4250009C3AAB /* RaceReady */,
+				A6C330C32C5108070021B655 /* RaceReadyWidget */,
+				A6C330BE2C5108070021B655 /* Frameworks */,
 				A6063FC72C2F4250009C3AAB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				A6063FC62C2F4250009C3AAB /* RaceReady.app */,
+				A6C330BD2C5108070021B655 /* RaceReadyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +216,7 @@
 		A6063FC82C2F4250009C3AAB /* RaceReady */ = {
 			isa = PBXGroup;
 			children = (
+				A6C330D82C513B030021B655 /* Loader */,
 				A6C330B62C50E9AF0021B655 /* Notification */,
 				A6F864A22C498AFF00F69C0B /* ErrorView */,
 				A61706712C3D8DC7003182FA /* ViewModel */,
@@ -357,6 +413,36 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		A6C330BE2C5108070021B655 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6C330BF2C5108070021B655 /* WidgetKit.framework */,
+				A6C330C12C5108070021B655 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6C330C32C5108070021B655 /* RaceReadyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A6C330C42C5108070021B655 /* RaceReadyWidgetBundle.swift */,
+				A6C330C62C5108070021B655 /* RaceReadyWidgetLiveActivity.swift */,
+				A6C330C82C5108070021B655 /* RaceReadyWidget.swift */,
+				A6C330CA2C5108070021B655 /* AppIntent.swift */,
+				A6C330CC2C5108090021B655 /* Assets.xcassets */,
+				A6C330CE2C5108090021B655 /* Info.plist */,
+			);
+			path = RaceReadyWidget;
+			sourceTree = "<group>";
+		};
+		A6C330D82C513B030021B655 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				A6C330DB2C513B490021B655 /* DotLoader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		A6F864A22C498AFF00F69C0B /* ErrorView */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,15 +472,34 @@
 				A6063FC22C2F4250009C3AAB /* Sources */,
 				A6063FC32C2F4250009C3AAB /* Frameworks */,
 				A6063FC42C2F4250009C3AAB /* Resources */,
+				A6C330D52C5108090021B655 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A6C330D02C5108090021B655 /* PBXTargetDependency */,
 			);
 			name = RaceReady;
 			productName = RaceReady;
 			productReference = A6063FC62C2F4250009C3AAB /* RaceReady.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6C330D22C5108090021B655 /* Build configuration list for PBXNativeTarget "RaceReadyWidgetExtension" */;
+			buildPhases = (
+				A6C330B92C5108070021B655 /* Sources */,
+				A6C330BA2C5108070021B655 /* Frameworks */,
+				A6C330BB2C5108070021B655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaceReadyWidgetExtension;
+			productName = RaceReadyWidgetExtension;
+			productReference = A6C330BD2C5108070021B655 /* RaceReadyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -407,6 +512,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					A6063FC52C2F4250009C3AAB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A6C330BC2C5108070021B655 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -425,6 +533,7 @@
 			projectRoot = "";
 			targets = (
 				A6063FC52C2F4250009C3AAB /* RaceReady */,
+				A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -437,6 +546,14 @@
 				A6098FF02C3BBA13007AE159 /* Launch Screen.storyboard in Resources */,
 				A6063FD12C2F4252009C3AAB /* Preview Assets.xcassets in Resources */,
 				A6063FCE2C2F4252009C3AAB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6C330BB2C5108070021B655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C330CD2C5108090021B655 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +601,7 @@
 				A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */,
 				A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */,
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
+				A6C330DC2C513B490021B655 /* DotLoader.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A61E33B22C418A0700D66C85 /* DriverView.swift in Sources */,
 				A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */,
@@ -506,7 +624,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6C330B92C5108070021B655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6C330C52C5108070021B655 /* RaceReadyWidgetBundle.swift in Sources */,
+				A6C330CB2C5108070021B655 /* AppIntent.swift in Sources */,
+				A6C330C72C5108070021B655 /* RaceReadyWidgetLiveActivity.swift in Sources */,
+				A6C330C92C5108070021B655 /* RaceReadyWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6C330D02C5108090021B655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */;
+			targetProxy = A6C330CF2C5108090021B655 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A6063FD22C2F4252009C3AAB /* Debug */ = {
@@ -631,6 +768,7 @@
 		A6063FD52C2F4252009C3AAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -662,6 +800,7 @@
 		A6063FD62C2F4252009C3AAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -690,6 +829,60 @@
 			};
 			name = Release;
 		};
+		A6C330D32C5108090021B655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJD5A2P8BC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaceReadyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RaceReadyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnannmuratovic.RaceReady.RaceReadyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6C330D42C5108090021B655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJD5A2P8BC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RaceReadyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RaceReadyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnannmuratovic.RaceReady.RaceReadyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -707,6 +900,15 @@
 			buildConfigurations = (
 				A6063FD52C2F4252009C3AAB /* Debug */,
 				A6063FD62C2F4252009C3AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6C330D22C5108090021B655 /* Build configuration list for PBXNativeTarget "RaceReadyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6C330D32C5108090021B655 /* Debug */,
+				A6C330D42C5108090021B655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

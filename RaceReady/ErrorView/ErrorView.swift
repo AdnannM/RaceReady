@@ -39,6 +39,7 @@ struct ErrorView: View {
             }
         }
         .padding()
+        .padding(.all)
         .background(Color(.systemBackground))
         .cornerRadius(20)
         .shadow(radius: 10)

@@ -20,7 +20,7 @@ struct DriversView: View {
     var body: some View {
         Group {
             if driverStandingsModel.isLoading {
-                ProgressView("Loading drivers...")
+                DotLoader(loadingText: "Loading drivers...")
             } else if let errorMessage = driverStandingsModel.errorMessage {
                 ErrorView(errorMessage: errorMessage) {
                     Task {
