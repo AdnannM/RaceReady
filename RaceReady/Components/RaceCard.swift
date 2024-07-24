@@ -59,6 +59,27 @@ struct RaceCard: View {
                         .clipShape(RoundedRectangle(cornerRadius: 4))
                     Spacer()
                 }
+                
+
+//                // Practice sessions
+//                EventTimeView(title: "Practice 1", session: race.firstPractice)
+//                if let secondPractice = race.secondPractice {
+//                    EventTimeView(title: "Practice 2", session: secondPractice)
+//                }
+//                if let thirdPractice = race.thirdPractice {
+//                    EventTimeView(title: "Practice 3", session: thirdPractice)
+//                }
+//                
+//                // Qualification
+//                EventTimeView(title: "Qualification", session: race.qualifying)
+//                
+//                // Sprint
+//                if let sprint = race.sprint {
+//                    EventTimeView(title: "Sprint", session: sprint)
+//                }
+//                
+//                // Race
+//                EventTimeView(title: "Race", date: race.date, time: race.time ?? "TBA")
             }
             .padding(.vertical, 5)
         }
@@ -67,3 +88,43 @@ struct RaceCard: View {
         .padding(.vertical, 10)  // Add vertical padding
     }
 }
+
+
+//struct EventTimeView: View {
+//    let title: String
+//    let date: String
+//    let time: String
+//    
+//    init(title: String, session: Session) {
+//        self.title = title
+//        self.date = session.date
+//        self.time = session.time ?? "TBA"
+//    }
+//    
+//    init(title: String, date: String, time: String) {
+//        self.title = title
+//        self.date = date
+//        self.time = time
+//    }
+//    
+//    var body: some View {
+//        HStack {
+//            Text(title)
+//                .fontWeight(.medium)
+//            Spacer()
+//            Text("\(formatDateString(date)) \(time)")
+//                .foregroundStyle(.secondary)
+//        }
+//    }
+//}
+//
+//
+//func formatDateString(_ dateString: String) -> String {
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = "yyyy-MM-dd"
+//    if let date = dateFormatter.date(from: dateString) {
+//        dateFormatter.dateFormat = "MMM d"
+//        return dateFormatter.string(from: date)
+//    }
+//    return dateString
+//}
