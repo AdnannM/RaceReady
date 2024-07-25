@@ -87,18 +87,83 @@ struct RaceReadyWidget: Widget {
 
 
 struct LargeRaceReadyWidgetEntryView: View {
-    var entry: Provider.Entry
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            // Add your large widget content here
-            // This can be an expanded version of your medium widget
-            // or a completely different layout
-            Text("Large Widget Content")
-            // ... add more content for large widget
-        }
-    }
+    var entry: Provider.Entry // Assuming you have a Provider and Entry type defined
+     
+     let standings = [
+         ("Verstappen", "169"),
+         ("Leclerc", "138"),
+         ("Norris", "113"),
+         ("Sainz", "108"),
+         ("Pérez", "107"),
+         ("Piastri", "71"),
+         ("Russell", "54"),
+         ("Hamilton", "42"),
+         ("Alonso", "33"),
+         ("Tsunoda", "19")
+     ]
+     
+     var body: some View {
+         VStack(spacing: 10) {
+             // F1 Standings part
+             HStack(spacing: 10) {
+                 VStack(spacing: 10) {
+                     ForEach(0..<5) { index in
+                         driverRow(position: index + 1, driver: standings[index])
+                     }
+                 }
+                 
+                 VStack(spacing: 10) {
+                     ForEach(5..<10) { index in
+                         driverRow(position: index + 1, driver: standings[index])
+                     }
+                 }
+             }
+             .padding(8)
+             .background(Color.black)
+             .cornerRadius(12)
+             
+             Spacer()
+             Divider().background(.purple)
+             MediumRaceReadyWidgetEntryView(entry: entry)
+         }
+     }
+     
+     func driverRow(position: Int, driver: (String, String)) -> some View {
+         HStack {
+             Text("\(position) \(driver.0)")
+                 .font(.system(size: 12, weight: .medium))
+                 .foregroundColor(.white)
+                 .frame(maxWidth: .infinity, alignment: .leading)
+             
+             Text(driver.1)
+                 .font(.system(size: 12, weight: .bold))
+                 .foregroundColor(.white)
+         }
+         .padding(.horizontal, 6)
+         .padding(.vertical, 3)
+         .background(backgroundColorFor(position: position))
+         .cornerRadius(4)
+     }
+     
+     func backgroundColorFor(position: Int) -> Color {
+         switch position {
+         case 1: return Color.blue.opacity(0.8)
+         case 2: return Color.red.opacity(0.8)
+         case 3: return Color.orange.opacity(0.8)
+         case 4: return Color.red.opacity(0.8)
+         case 5: return Color.blue.opacity(0.8)
+         case 6: return Color.orange.opacity(0.8)
+         case 7: return Color.teal.opacity(0.8)
+         case 8: return Color.teal.opacity(0.8)
+         case 9: return Color.green.opacity(0.8)
+         case 10: return Color.blue.opacity(0.8)
+         default: return Color.gray.opacity(1)
+         }
+     }
 }
+
+
+
 
 
 struct MediumRaceReadyWidgetEntryView: View {
