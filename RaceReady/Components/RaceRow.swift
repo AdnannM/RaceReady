@@ -14,54 +14,70 @@ struct RaceRow: View {
     
     var body: some View {
         VStack(spacing: 10) {
+//            HStack {
+//                Text(race.circuit.circuitName)
+//                    .font(.system(size: 25))
+//                    .fontWidth(.compressed)
+//                    .fontWeight(.medium)
+//                Spacer()
+//                
+//                if let flag = race.countryFlag {
+//                    Image(flag)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 35)
+//                    .shadow(color: colorScheme == .dark ? .white : .black, radius: 0.5)
+//                }
+//            }
+//            .padding(.bottom, 5)
+            
+            RaceHeaderView(race: race, colorScheme: colorScheme)
+            
+            Divider().background(.purple)
+            
+//            if let countryImage = race.circuitImage {
+//                Image(countryImage)  // Replace with race-specific image
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(height: 150)
+//            }
+            
+            CircuitImageView(circuitImage: race.circuitImage)
+            
+            Divider().background(.purple)
+            
+            RaceInfoView(race: race)
+            
             HStack {
-                Text(race.circuit.circuitName)
-                    .font(.system(size: 25))
-                    .fontWidth(.compressed)
-                    .fontWeight(.medium)
+                Text("\(race.firstPractice.date.formattedDate()) - \(race.date.formattedDate())")
+                    .padding(3)
+                    .foregroundStyle(.secondary)
+                    .background(Color("ColorBlue").opacity(0.8))
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
                 Spacer()
-                
-                if let flag = race.countryFlag {
-                    Image(flag)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35)
-                    .shadow(color: colorScheme == .dark ? .white : .black, radius: 0.5)
-                }
             }
-            .padding(.bottom, 5)
+
             
-            Divider()
-            
-            if let countryImage = race.circuitImage {
-                Image(countryImage)  // Replace with race-specific image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 150)
-            }
-            
-            Divider()
-            
-            VStack(spacing: 10) {
-                HStack {
-                    Text(race.raceName)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("Round \(race.round)")
-                        .foregroundStyle(.secondary)
-                }
-                
-                
-                HStack {
-                    Text("\(race.firstPractice.date.formattedDate()) - \(race.date.formattedDate())")
-                        .padding(3)
-                        .foregroundStyle(.secondary)
-                        .background(Color("ColorBlue").opacity(0.8))
-                        .clipShape(RoundedRectangle(cornerRadius: 4))
-                    Spacer()
-                }
-            }
-            .padding(.vertical, 5)
+//            VStack(spacing: 10) {
+//                HStack {
+//                    Text(race.raceName)
+//                        .foregroundStyle(.secondary)
+//                    Spacer()
+//                    Text("Round \(race.round)")
+//                        .foregroundStyle(.secondary)
+//                }
+//                
+//                
+//                HStack {
+//                    Text("\(race.firstPractice.date.formattedDate()) - \(race.date.formattedDate())")
+//                        .padding(3)
+//                        .foregroundStyle(.secondary)
+//                        .background(Color("ColorBlue").opacity(0.8))
+//                        .clipShape(RoundedRectangle(cornerRadius: 4))
+//                    Spacer()
+//                }
+//            }
+//            .padding(.vertical, 5)
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 10).fill(Color(.systemBackground)).shadow(radius: 2))
