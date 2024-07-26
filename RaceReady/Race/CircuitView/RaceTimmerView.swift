@@ -38,15 +38,16 @@ struct RaceTimmerView: View {
                 .stroke(Color.gray, lineWidth: 1)
         }
         
-        // MARK: - BUG with the time add +4h and need to be +2h when time is converted
         .onAppear {
             if let time = race.firstPractice.time {
                 let combinedDateTimeString = "\(race.firstPractice.date)T\(time)"
                 print("Combined date and time string: \(combinedDateTimeString)")
-                if let raceDate = combinedDateTimeString.toISO8601Date() {
-                    let localRaceDate = raceDate.toTimeZone(7200) // Explicitly set to +2 hours (7200 seconds)
-                    print("First practice local date: \(localRaceDate.formattedLocalDateTime())")
-                    viewModel.startCountdown(to: localRaceDate)
+                
+                let formattedDateTime = formatDateTime(date: race.firstPractice.date, time: time)
+                print("First practice local date: \(formattedDateTime)")
+                
+                if let raceDate = ISO8601DateFormatter().date(from: combinedDateTimeString) {
+                    viewModel.startCountdown(to: raceDate)
                 } else {
                     print("Failed to parse date string: \(combinedDateTimeString)")
                 }
@@ -80,34 +81,20 @@ struct RaceTimmerView: View {
 }
 
 
-/*
- TODO:
-         - Convert time from Z to Central Eu Time
-         - With this code it works but add +4h time
-           Insted of +2h and in this case first practice
-           start and 15:30 insted of 13:30
- */
 
-extension String {
-    func toISO8601Date() -> Date? {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime]
-        return formatter.date(from: self)
-    }
-}
 
-extension Date {
-    func toTimeZone(_: Int) -> Date {
-        let timeZone = TimeZone.current
-        let seconds = TimeInterval(timeZone.secondsFromGMT(for: self))
-        return self.addingTimeInterval(seconds)
+
+func formatDateTime1(date: String, time: String) -> String {
+    let dateFormatter = ISO8601DateFormatter()
+    dateFormatter.formatOptions = [.withInternetDateTime]
+    
+    if let dateTime = dateFormatter.date(from: "\(date)T\(time)") {
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "MMM d HH:mm"
+        outputFormatter.timeZone = TimeZone(identifier: "Europe/Berlin")
+        
+        return outputFormatter.string(from: dateTime)
     }
     
-    func formattedLocalDateTime() -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        formatter.timeZone = TimeZone.current
-        return formatter.string(from: self)
-    }
+    return "\(date) \(time)"
 }

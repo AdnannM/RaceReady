@@ -61,25 +61,25 @@ struct RaceCard: View {
                 }
                 
 
-//                // Practice sessions
-//                EventTimeView(title: "Practice 1", session: race.firstPractice)
-//                if let secondPractice = race.secondPractice {
-//                    EventTimeView(title: "Practice 2", session: secondPractice)
-//                }
-//                if let thirdPractice = race.thirdPractice {
-//                    EventTimeView(title: "Practice 3", session: thirdPractice)
-//                }
-//                
-//                // Qualification
-//                EventTimeView(title: "Qualification", session: race.qualifying)
-//                
-//                // Sprint
-//                if let sprint = race.sprint {
-//                    EventTimeView(title: "Sprint", session: sprint)
-//                }
-//                
-//                // Race
-//                EventTimeView(title: "Race", date: race.date, time: race.time ?? "TBA")
+                // Practice sessions
+                EventTimeView(title: "Practice 1", session: race.firstPractice)
+                if let secondPractice = race.secondPractice {
+                    EventTimeView(title: "Practice 2", session: secondPractice)
+                }
+                if let thirdPractice = race.thirdPractice {
+                    EventTimeView(title: "Practice 3", session: thirdPractice)
+                }
+                
+                // Qualification
+                EventTimeView(title: "Qualification", session: race.qualifying)
+                
+                // Sprint
+                if let sprint = race.sprint {
+                    EventTimeView(title: "Sprint", session: sprint)
+                }
+                
+                // Race
+                EventTimeView(title: "Race", date: race.date, time: race.time ?? "TBA")
             }
             .padding(.vertical, 5)
         }
@@ -89,42 +89,47 @@ struct RaceCard: View {
     }
 }
 
+struct EventTimeView: View {
+    let title: String
+    let date: String
+    let time: String
+    
+    init(title: String, session: Session) {
+        self.title = title
+        self.date = session.date
+        self.time = session.time ?? "TBA"
+    }
+    
+    init(title: String, date: String, time: String) {
+        self.title = title
+        self.date = date
+        self.time = time
+    }
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .fontWeight(.medium)
+            Spacer()
+            Text(formatDateTime(date: date, time: time))
+                .foregroundStyle(.secondary)
+        }
+    }
+}
 
-//struct EventTimeView: View {
-//    let title: String
-//    let date: String
-//    let time: String
-//    
-//    init(title: String, session: Session) {
-//        self.title = title
-//        self.date = session.date
-//        self.time = session.time ?? "TBA"
-//    }
-//    
-//    init(title: String, date: String, time: String) {
-//        self.title = title
-//        self.date = date
-//        self.time = time
-//    }
-//    
-//    var body: some View {
-//        HStack {
-//            Text(title)
-//                .fontWeight(.medium)
-//            Spacer()
-//            Text("\(formatDateString(date)) \(time)")
-//                .foregroundStyle(.secondary)
-//        }
-//    }
-//}
-//
-//
-//func formatDateString(_ dateString: String) -> String {
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateFormat = "yyyy-MM-dd"
-//    if let date = dateFormatter.date(from: dateString) {
-//        dateFormatter.dateFormat = "MMM d"
-//        return dateFormatter.string(from: date)
-//    }
-//    return dateString
-//}
+func formatDateTime(date: String, time: String) -> String {
+    let dateFormatter = ISO8601DateFormatter()
+    dateFormatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime]
+    
+    if let dateTime = dateFormatter.date(from: "\(date)T\(time)") {
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "MMM d HH:mm"
+        outputFormatter.timeZone = TimeZone.current
+        
+        return outputFormatter.string(from: dateTime)
+    }
+    
+    return "\(date) \(time)"
+}
+
+

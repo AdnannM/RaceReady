@@ -14,13 +14,15 @@ class CountdownViewModel: ObservableObject {
     @Published var minutes: Int = 0
     
     private var timer: AnyCancellable?
+    private let centralEuropeanTimeZone = TimeZone(identifier: "Europe/Berlin")!
     
     func startCountdown(to date: Date) {
         timer?.cancel()
         timer = Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
-            .sink { _ in
-                let timeInterval = date.timeIntervalSinceNow
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                let timeInterval = self.getTimeIntervalToCentralEuropeanTime(date: date)
                 if timeInterval > 0 {
                     self.updateTimeRemaining(timeInterval)
                 } else {
@@ -28,10 +30,18 @@ class CountdownViewModel: ObservableObject {
                 }
             }
         // Initial update
-        let timeInterval = date.timeIntervalSinceNow
+        let timeInterval = getTimeIntervalToCentralEuropeanTime(date: date)
         if timeInterval > 0 {
             self.updateTimeRemaining(timeInterval)
         }
+    }
+    
+    private func getTimeIntervalToCentralEuropeanTime(date: Date) -> TimeInterval {
+        let currentDate = Date()
+        let centralEuropeanOffset = centralEuropeanTimeZone.secondsFromGMT(for: currentDate)
+        let localOffset = TimeZone.current.secondsFromGMT(for: currentDate)
+        let offsetDifference = TimeInterval(centralEuropeanOffset - localOffset)
+        return date.timeIntervalSinceNow + offsetDifference
     }
     
     private func updateTimeRemaining(_ timeInterval: TimeInterval) {
