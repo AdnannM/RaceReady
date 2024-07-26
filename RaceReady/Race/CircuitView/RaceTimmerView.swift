@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RaceTimmerView: View {
-    
     @State private var isAnimating = false
     @StateObject private var viewModel = CountdownViewModel()
     var race: Race
@@ -37,21 +36,8 @@ struct RaceTimmerView: View {
             BottomRightRoundedBorder()
                 .stroke(Color.gray, lineWidth: 1)
         }
-        
         .onAppear {
-            if let time = race.firstPractice.time {
-                let combinedDateTimeString = "\(race.firstPractice.date)T\(time)"
-                print("Combined date and time string: \(combinedDateTimeString)")
-                
-                let formattedDateTime = formatDateTime(date: race.firstPractice.date, time: time)
-                print("First practice local date: \(formattedDateTime)")
-                
-                if let raceDate = ISO8601DateFormatter().date(from: combinedDateTimeString) {
-                    viewModel.startCountdown(to: raceDate)
-                } else {
-                    print("Failed to parse date string: \(combinedDateTimeString)")
-                }
-            }
+            viewModel.setRace(race)
         }
     }
 }
