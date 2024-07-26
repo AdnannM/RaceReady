@@ -187,4 +187,13 @@
 
  ---
  
+ ---
+
+ **13. Format date and time in Race View**
+    - **Goal**: Make it clean.
+    - **Steps**:
+      1. **Design Improvements**: Divide date and time, etc.
+      2. **Design Improvements**: Make it Grind 2 in row and display it 
+ ---
+ 
  /**/*/

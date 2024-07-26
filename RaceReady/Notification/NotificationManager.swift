@@ -9,11 +9,12 @@ import SwiftUI
 import UserNotifications
 
 class NotificationManager: ObservableObject {
+    
+    var race: Race?
+    
     static let shared = NotificationManager()
     
     @Published var isAuthorized: Bool = false
-    
-    private init() {}
     
     func requestNotification() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
@@ -48,8 +49,9 @@ class NotificationManager: ObservableObject {
     
     private func scheduleNotificationAt(date: Date, minutes: Int, title: String) {
         let content = UNMutableNotificationContent()
-        content.title = "F1 Event Reminder"
-        content.body = "\(title) starts in \(minutes) minutes"
+        guard let raceName = race?.raceName else { return }
+        content.title = "FORMULA 1 - \(raceName)"
+        content.body = "\(title) starts in \(minutes) minutes \n\nGet ready for \(raceName)"
         content.sound = .default
         
         let triggerDate = date.addingTimeInterval(-Double(minutes * 60))

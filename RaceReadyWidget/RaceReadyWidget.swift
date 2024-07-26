@@ -43,6 +43,8 @@ struct RaceReadyWidgetEntryView: View {
     var body: some View {
         Group {
             switch family {
+            case .systemSmall:
+                SmallRaceReadyWidgetEntryView(entry: entry)
             case .systemMedium:
                 MediumRaceReadyWidgetEntryView(entry: entry)
             case .systemLarge:
@@ -84,6 +86,12 @@ struct RaceReadyWidget: Widget {
 }
 
 
+#Preview(as: .systemSmall) {
+    RaceReadyWidget()
+} timeline: {
+    SimpleEntry(date: .now)
+    SimpleEntry(date: .now)
+}
 
 
 struct LargeRaceReadyWidgetEntryView: View {
@@ -270,5 +278,14 @@ struct MediumRaceReadyWidgetEntryView: View {
                 }
             }
         }
+    }
+}
+
+
+struct SmallRaceReadyWidgetEntryView: View {
+    var entry: Provider.Entry
+    
+    var body: some View {
+        Text("Small Widet")
     }
 }
