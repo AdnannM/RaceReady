@@ -96,78 +96,78 @@ struct RaceReadyWidget: Widget {
 
 struct LargeRaceReadyWidgetEntryView: View {
     var entry: Provider.Entry // Assuming you have a Provider and Entry type defined
-     
-     let standings = [
-         ("Verstappen", "169"),
-         ("Leclerc", "138"),
-         ("Norris", "113"),
-         ("Sainz", "108"),
-         ("Pérez", "107"),
-         ("Piastri", "71"),
-         ("Russell", "54"),
-         ("Hamilton", "42"),
-         ("Alonso", "33"),
-         ("Tsunoda", "19")
-     ]
-     
-     var body: some View {
-         VStack(spacing: 10) {
-             // F1 Standings part
-             HStack(spacing: 10) {
-                 VStack(spacing: 10) {
-                     ForEach(0..<5) { index in
-                         driverRow(position: index + 1, driver: standings[index])
-                     }
-                 }
-                 
-                 VStack(spacing: 10) {
-                     ForEach(5..<10) { index in
-                         driverRow(position: index + 1, driver: standings[index])
-                     }
-                 }
-             }
-             .padding(8)
-             .background(Color.black)
-             .cornerRadius(12)
-             
-             Spacer()
-             Divider().background(.purple)
-             MediumRaceReadyWidgetEntryView(entry: entry)
-         }
-     }
-     
-     func driverRow(position: Int, driver: (String, String)) -> some View {
-         HStack {
-             Text("\(position) \(driver.0)")
-                 .font(.system(size: 12, weight: .medium))
-                 .foregroundColor(.white)
-                 .frame(maxWidth: .infinity, alignment: .leading)
-             
-             Text(driver.1)
-                 .font(.system(size: 12, weight: .bold))
-                 .foregroundColor(.white)
-         }
-         .padding(.horizontal, 6)
-         .padding(.vertical, 3)
-         .background(backgroundColorFor(position: position))
-         .cornerRadius(4)
-     }
-     
-     func backgroundColorFor(position: Int) -> Color {
-         switch position {
-         case 1: return Color.blue.opacity(0.8)
-         case 2: return Color.red.opacity(0.8)
-         case 3: return Color.orange.opacity(0.8)
-         case 4: return Color.red.opacity(0.8)
-         case 5: return Color.blue.opacity(0.8)
-         case 6: return Color.orange.opacity(0.8)
-         case 7: return Color.teal.opacity(0.8)
-         case 8: return Color.teal.opacity(0.8)
-         case 9: return Color.green.opacity(0.8)
-         case 10: return Color.blue.opacity(0.8)
-         default: return Color.gray.opacity(1)
-         }
-     }
+    
+    let standings = [
+        ("Verstappen", "169"),
+        ("Leclerc", "138"),
+        ("Norris", "113"),
+        ("Sainz", "108"),
+        ("Pérez", "107"),
+        ("Piastri", "71"),
+        ("Russell", "54"),
+        ("Hamilton", "42"),
+        ("Alonso", "33"),
+        ("Tsunoda", "19")
+    ]
+    
+    var body: some View {
+        VStack(spacing: 10) {
+            // F1 Standings part
+            HStack(spacing: 10) {
+                VStack(spacing: 10) {
+                    ForEach(0..<5) { index in
+                        driverRow(position: index + 1, driver: standings[index])
+                    }
+                }
+                
+                VStack(spacing: 10) {
+                    ForEach(5..<10) { index in
+                        driverRow(position: index + 1, driver: standings[index])
+                    }
+                }
+            }
+            .padding(8)
+            .background(Color.black)
+            .cornerRadius(12)
+            
+            Spacer()
+            Divider().background(.purple)
+            MediumRaceReadyWidgetEntryView(entry: entry)
+        }
+    }
+    
+    func driverRow(position: Int, driver: (String, String)) -> some View {
+        HStack {
+            Text("\(position) \(driver.0)")
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text(driver.1)
+                .font(.system(size: 12, weight: .bold))
+                .foregroundColor(.white)
+        }
+        .padding(.horizontal, 6)
+        .padding(.vertical, 3)
+        .background(backgroundColorFor(position: position))
+        .cornerRadius(4)
+    }
+    
+    func backgroundColorFor(position: Int) -> Color {
+        switch position {
+        case 1: return Color.blue.opacity(0.8)
+        case 2: return Color.red.opacity(0.8)
+        case 3: return Color.orange.opacity(0.8)
+        case 4: return Color.red.opacity(0.8)
+        case 5: return Color.blue.opacity(0.8)
+        case 6: return Color.orange.opacity(0.8)
+        case 7: return Color.teal.opacity(0.8)
+        case 8: return Color.teal.opacity(0.8)
+        case 9: return Color.green.opacity(0.8)
+        case 10: return Color.blue.opacity(0.8)
+        default: return Color.gray.opacity(1)
+        }
+    }
 }
 
 
@@ -286,6 +286,49 @@ struct SmallRaceReadyWidgetEntryView: View {
     var entry: Provider.Entry
     
     var body: some View {
-        Text("Small Widet")
+        VStack(alignment: .leading, spacing: 2) {
+            Text("Canadian")
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.primary)
+            Text("Grand Prix")
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.primary)
+            
+            Text("7 - 9 JUN")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(.purple)
+            
+            Text("Round 09")
+                .font(.system(size: 12))
+                .foregroundColor(.gray)
+            
+            Divider()
+                .background(Color.purple)
+                .padding(.vertical, 4)
+            
+            HStack(alignment: .top, spacing: 16) {
+                sessionInfoView(day: "SAT", event: "Quali", time: "22:00")
+                Divider().background(.purple)
+                sessionInfoView(day: "SUN", event: "Race", time: "20:00")
+            }
+        }
+        .padding(.horizontal, 5)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .cornerRadius(20)
+    }
+    
+    private func sessionInfoView(day: String, event: String, time: String) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(day)
+                .font(.system(size: 10))
+                .foregroundColor(.secondary)
+            Text(event)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+            Text(time)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(.primary)
+        }
     }
 }

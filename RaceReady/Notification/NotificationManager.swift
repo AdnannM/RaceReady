@@ -51,8 +51,10 @@ class NotificationManager: ObservableObject {
         let content = UNMutableNotificationContent()
         guard let raceName = race?.raceName else { return }
         content.title = "FORMULA 1 - \(raceName)"
-        content.body = "\(title) starts in \(minutes) minutes \n\nGet ready for \(raceName)"
+        content.body = "⏱️ \(title) starts in \(minutes) minutes\n\nGet ready for \(raceName)"
         content.sound = .default
+        
+        print("Scheduling notification: Title: \(content.title), Body: \(content.body)")
         
         let triggerDate = date.addingTimeInterval(-Double(minutes * 60))
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: triggerDate)
