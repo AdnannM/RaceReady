@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum DataSource {
+    case api, cache
+}
+
 @MainActor
 class DriverStandingsModel: ObservableObject {
     let webservice: WebService
@@ -18,10 +22,6 @@ class DriverStandingsModel: ObservableObject {
     @Published var lastUpdate: Date?
     @Published var dataSource: DataSource = .api
     @Published var isCacheAvailable: Bool = false
-    
-    enum DataSource {
-        case api, cache
-    }
     
     init(webservice: WebService, driversInfoImages: DriversInfoImages = DriversInfoImages()) {
         self.webservice = webservice
