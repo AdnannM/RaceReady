@@ -72,7 +72,6 @@ class ConstructorsStandingsModel: ObservableObject {
         case "Haas", "Haas F1 Team", "MoneyGram Haas F1 Team":
             return "Haas"
         default:
-            print("Unrecognized team name: \(name)")
             return name
         }
     }

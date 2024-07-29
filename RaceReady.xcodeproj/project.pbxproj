@@ -41,6 +41,7 @@
 		A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F42C413350002C9C67 /* RaceResultsViewModel.swift */; };
 		A62DC3F72C415211002C9C67 /* DriversData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F62C415211002C9C67 /* DriversData.swift */; };
 		A64294C12C57951300B0C575 /* RaceReadyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64294C02C57951300B0C575 /* RaceReadyTests.swift */; };
+		A64294C92C57EB9900B0C575 /* F1StandingsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64294C82C57EB9900B0C575 /* F1StandingsCache.swift */; };
 		A644CBA42C4678760064FE50 /* DriverStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA32C4678760064FE50 /* DriverStandings.swift */; };
 		A644CBA62C467EF20064FE50 /* DriverStandingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA52C467EF20064FE50 /* DriverStandingsModel.swift */; };
 		A644CBA82C46A6B00064FE50 /* DriversImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA72C46A6B00064FE50 /* DriversImages.swift */; };
@@ -153,6 +154,7 @@
 		A62DC3F62C415211002C9C67 /* DriversData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversData.swift; sourceTree = "<group>"; };
 		A64294BE2C57951300B0C575 /* RaceReadyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceReadyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64294C02C57951300B0C575 /* RaceReadyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyTests.swift; sourceTree = "<group>"; };
+		A64294C82C57EB9900B0C575 /* F1StandingsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1StandingsCache.swift; sourceTree = "<group>"; };
 		A644CBA32C4678760064FE50 /* DriverStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandings.swift; sourceTree = "<group>"; };
 		A644CBA52C467EF20064FE50 /* DriverStandingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsModel.swift; sourceTree = "<group>"; };
 		A644CBA72C46A6B00064FE50 /* DriversImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversImages.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		A6063FC82C2F4250009C3AAB /* RaceReady */ = {
 			isa = PBXGroup;
 			children = (
+				A64294C72C57EB7C00B0C575 /* Cache */,
 				A6C330D82C513B030021B655 /* Loader */,
 				A6C330B62C50E9AF0021B655 /* Notification */,
 				A6F864A22C498AFF00F69C0B /* ErrorView */,
@@ -459,6 +462,14 @@
 				A64294C02C57951300B0C575 /* RaceReadyTests.swift */,
 			);
 			path = RaceReadyTests;
+			sourceTree = "<group>";
+		};
+		A64294C72C57EB7C00B0C575 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				A64294C82C57EB9900B0C575 /* F1StandingsCache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		A6C330B62C50E9AF0021B655 /* Notification */ = {
@@ -693,6 +704,7 @@
 				A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */,
 				A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */,
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
+				A64294C92C57EB9900B0C575 /* F1StandingsCache.swift in Sources */,
 				A6C330DC2C513B490021B655 /* DotLoader.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,
 				A61E33B22C418A0700D66C85 /* DriverView.swift in Sources */,
