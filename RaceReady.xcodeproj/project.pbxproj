@@ -40,6 +40,7 @@
 		A62DC3F32C413336002C9C67 /* RoundCorners+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F22C413336002C9C67 /* RoundCorners+Extension.swift */; };
 		A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F42C413350002C9C67 /* RaceResultsViewModel.swift */; };
 		A62DC3F72C415211002C9C67 /* DriversData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DC3F62C415211002C9C67 /* DriversData.swift */; };
+		A64294C12C57951300B0C575 /* RaceReadyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64294C02C57951300B0C575 /* RaceReadyTests.swift */; };
 		A644CBA42C4678760064FE50 /* DriverStandings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA32C4678760064FE50 /* DriverStandings.swift */; };
 		A644CBA62C467EF20064FE50 /* DriverStandingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA52C467EF20064FE50 /* DriverStandingsModel.swift */; };
 		A644CBA82C46A6B00064FE50 /* DriversImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A644CBA72C46A6B00064FE50 /* DriversImages.swift */; };
@@ -85,6 +86,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A64294C22C57951300B0C575 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6063FBE2C2F4250009C3AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6063FC52C2F4250009C3AAB;
+			remoteInfo = RaceReady;
+		};
 		A6C330CF2C5108090021B655 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A6063FBE2C2F4250009C3AAB /* Project object */;
@@ -143,6 +151,8 @@
 		A62DC3F22C413336002C9C67 /* RoundCorners+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundCorners+Extension.swift"; sourceTree = "<group>"; };
 		A62DC3F42C413350002C9C67 /* RaceResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceResultsViewModel.swift; sourceTree = "<group>"; };
 		A62DC3F62C415211002C9C67 /* DriversData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversData.swift; sourceTree = "<group>"; };
+		A64294BE2C57951300B0C575 /* RaceReadyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaceReadyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A64294C02C57951300B0C575 /* RaceReadyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyTests.swift; sourceTree = "<group>"; };
 		A644CBA32C4678760064FE50 /* DriverStandings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandings.swift; sourceTree = "<group>"; };
 		A644CBA52C467EF20064FE50 /* DriverStandingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsModel.swift; sourceTree = "<group>"; };
 		A644CBA72C46A6B00064FE50 /* DriversImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversImages.swift; sourceTree = "<group>"; };
@@ -196,6 +206,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A64294BB2C57951300B0C575 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6C330BA2C5108070021B655 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +230,7 @@
 			children = (
 				A6063FC82C2F4250009C3AAB /* RaceReady */,
 				A6C330C32C5108070021B655 /* RaceReadyWidget */,
+				A64294BF2C57951300B0C575 /* RaceReadyTests */,
 				A6C330BE2C5108070021B655 /* Frameworks */,
 				A6063FC72C2F4250009C3AAB /* Products */,
 			);
@@ -223,6 +241,7 @@
 			children = (
 				A6063FC62C2F4250009C3AAB /* RaceReady.app */,
 				A6C330BD2C5108070021B655 /* RaceReadyWidgetExtension.appex */,
+				A64294BE2C57951300B0C575 /* RaceReadyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,6 +453,14 @@
 			path = CardAndRowComponents;
 			sourceTree = "<group>";
 		};
+		A64294BF2C57951300B0C575 /* RaceReadyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A64294C02C57951300B0C575 /* RaceReadyTests.swift */,
+			);
+			path = RaceReadyTests;
+			sourceTree = "<group>";
+		};
 		A6C330B62C50E9AF0021B655 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +540,24 @@
 			productReference = A6063FC62C2F4250009C3AAB /* RaceReady.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A64294BD2C57951300B0C575 /* RaceReadyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A64294C62C57951300B0C575 /* Build configuration list for PBXNativeTarget "RaceReadyTests" */;
+			buildPhases = (
+				A64294BA2C57951300B0C575 /* Sources */,
+				A64294BB2C57951300B0C575 /* Frameworks */,
+				A64294BC2C57951300B0C575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A64294C32C57951300B0C575 /* PBXTargetDependency */,
+			);
+			name = RaceReadyTests;
+			productName = RaceReadyTests;
+			productReference = A64294BE2C57951300B0C575 /* RaceReadyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6C330D22C5108090021B655 /* Build configuration list for PBXNativeTarget "RaceReadyWidgetExtension" */;
@@ -543,6 +588,10 @@
 					A6063FC52C2F4250009C3AAB = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					A64294BD2C57951300B0C575 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A6063FC52C2F4250009C3AAB;
+					};
 					A6C330BC2C5108070021B655 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -563,6 +612,7 @@
 			targets = (
 				A6063FC52C2F4250009C3AAB /* RaceReady */,
 				A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */,
+				A64294BD2C57951300B0C575 /* RaceReadyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -575,6 +625,13 @@
 				A6098FF02C3BBA13007AE159 /* Launch Screen.storyboard in Resources */,
 				A6063FD12C2F4252009C3AAB /* Preview Assets.xcassets in Resources */,
 				A6063FCE2C2F4252009C3AAB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A64294BC2C57951300B0C575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +717,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A64294BA2C57951300B0C575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64294C12C57951300B0C575 /* RaceReadyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6C330B92C5108070021B655 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +739,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A64294C32C57951300B0C575 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6063FC52C2F4250009C3AAB /* RaceReady */;
+			targetProxy = A64294C22C57951300B0C575 /* PBXContainerItemProxy */;
+		};
 		A6C330D02C5108090021B655 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A6C330BC2C5108070021B655 /* RaceReadyWidgetExtension */;
@@ -865,6 +935,42 @@
 			};
 			name = Release;
 		};
+		A64294C42C57951300B0C575 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJD5A2P8BC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnannmuratovic.RaceReadyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaceReady.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RaceReady";
+			};
+			name = Debug;
+		};
+		A64294C52C57951300B0C575 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJD5A2P8BC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adnannmuratovic.RaceReadyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaceReady.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RaceReady";
+			};
+			name = Release;
+		};
 		A6C330D32C5108090021B655 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -936,6 +1042,15 @@
 			buildConfigurations = (
 				A6063FD52C2F4252009C3AAB /* Debug */,
 				A6063FD62C2F4252009C3AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A64294C62C57951300B0C575 /* Build configuration list for PBXNativeTarget "RaceReadyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A64294C42C57951300B0C575 /* Debug */,
+				A64294C52C57951300B0C575 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

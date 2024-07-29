@@ -18,38 +18,47 @@ struct DriversView: View {
     @EnvironmentObject var driverStandingsModel: DriverStandingsModel
     
     var body: some View {
-        Group {
+        VStack {
             if driverStandingsModel.isLoading {
                 DotLoader(loadingText: "Loading drivers...")
             } else if let errorMessage = driverStandingsModel.errorMessage {
-                ErrorView(errorMessage: errorMessage) {
-                    Task {
-                        await driverStandingsModel.populateDriverStandings()
-                    }
-                }
+                errorView(message: errorMessage)
             } else if driverStandingsModel.driverStandings.isEmpty {
-                Text("No driver standings available")
-                    .foregroundColor(.secondary)
+                EmptyView()
             } else {
-                List {
-                    ForEach(driverStandingsModel.driverStandings, id: \.driver.driverId) { driverStanding in
-                        DriverStandingView(driverStanding: driverStanding)
-                    }
-                }
+                driverList
             }
         }
         .navigationTitle("F1 Drivers 2024")
         .navigationBarTitleDisplayMode(.large)
-        .onAppear {
-            if driverStandingsModel.driverStandings.isEmpty {
-                Task {
-                    await driverStandingsModel.populateDriverStandings()
-                }
+        .onAppear(perform: loadDataIfNeeded)
+    }
+    
+    private func errorView(message: String) -> some View {
+        Group {
+            if driverStandingsModel.isCacheAvailable {
+                driverList
+            } else {
+                Text("No cached data available")
+                    .foregroundColor(.orange)
+            }
+        }
+    }
+        
+    private var driverList: some View {
+        List(driverStandingsModel.driverStandings, id: \.driver.driverId) { driverStanding in
+            DriverStandingView(driverStanding: driverStanding)
+        }
+    }
+    
+    private func loadDataIfNeeded() {
+        if driverStandingsModel.driverStandings.isEmpty {
+            Task {
+                await driverStandingsModel.populateDriverStandings()
             }
         }
     }
 }
-
 
 #Preview("Drivers View") {
     NavigationStack {
@@ -57,4 +66,3 @@ struct DriversView: View {
             .environmentObject(DriverStandingsModel(webservice: WebService()))
     }
 }
-
