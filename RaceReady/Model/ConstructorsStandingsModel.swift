@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 @MainActor
 class ConstructorsStandingsModel: ObservableObject {
     let webservice: WebService

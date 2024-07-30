@@ -7,58 +7,34 @@
 
 import Foundation
 
- enum Keys {
-    static let driverStandings = "cacheDriverStandings"
-    static let lastUpdate = "driverStandingsLastUpdate"
-    static let teamsStandings = "cacheTeamsStandings"
-    static let lastTeamsUpdate = "teamsStandingsLastUpdate"
-}
-
+// F1StandingsCache using the new CacheManager
 class F1StandingsCache {
     static let shared = F1StandingsCache()
+    private let cacheManager: CacheManager<DriverStanding>
     
-    private let userDefaults = UserDefaults.standard
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    private init() {
+        cacheManager = CacheManager(cacheKey: Keys.driverStandings, lastUpdateKey: Keys.lastUpdate)
+    }
     
     func saveDriverStandings(_ standings: [DriverStanding]) {
-        do {
-            let encoded = try encoder.encode(standings)
-            userDefaults.set(encoded, forKey: Keys.driverStandings)
-            userDefaults.set(Date(), forKey: Keys.lastUpdate)
-        } catch {
-            print("Error encoding driver standings: \(error.localizedDescription)")
-        }
+        cacheManager.save(standings)
     }
     
     func getDriverStandings() -> [DriverStanding]? {
-        guard let savedStandings = userDefaults.data(forKey: Keys.driverStandings) else {
-            return nil
-        }
-        
-        do {
-            let decodedStandings = try decoder.decode([DriverStanding].self, from: savedStandings)
-            return decodedStandings
-        } catch {
-            print("Error decoding driver standings: \(error.localizedDescription)")
-            return nil
-        }
+        return cacheManager.retrieve()
     }
     
     func getLastUpdatedDate() -> Date? {
-        return userDefaults.object(forKey: Keys.lastUpdate) as? Date
+        return cacheManager.getLastUpdatedDate()
     }
     
     func isCacheStale() -> Bool {
-        guard let lastUpdate = getLastUpdatedDate() else {
-            return true
-        }
-        let staleThreshold: TimeInterval = 3600 // 1 hour
-        return Date().timeIntervalSince(lastUpdate) > staleThreshold
+        return cacheManager.isCacheStale()
     }
     
     func clearCache() {
-        userDefaults.removeObject(forKey: Keys.driverStandings)
-        userDefaults.removeObject(forKey: Keys.lastUpdate)
+        cacheManager.clearCache()
     }
 }
+
+

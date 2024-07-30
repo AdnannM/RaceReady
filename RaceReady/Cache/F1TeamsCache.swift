@@ -7,53 +7,32 @@
 
 import Foundation
 
+// F1TeamsCache using the new CacheManager
 class F1TeamsCache {
     static let shared = F1TeamsCache()
+    private let cacheManager: CacheManager<ConstructorStandingModel>
     
-    private let userDefaults = UserDefaults.standard
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+    private init() {
+        cacheManager = CacheManager(cacheKey: Keys.teamsStandings, lastUpdateKey: Keys.lastTeamsUpdate)
+    }
     
     func saveTeamsStandings(_ standings: [ConstructorStandingModel]) {
-        do {
-            let encoded = try encoder.encode(standings)
-            userDefaults.set(encoded, forKey: Keys.teamsStandings)
-            userDefaults.set(encoded, forKey: Keys.lastTeamsUpdate)
-        } catch {
-            print("Error encoding teams standings: \(error.localizedDescription)")
-        }
+        cacheManager.save(standings)
     }
     
     func getTeamsStandings() -> [ConstructorStandingModel]? {
-        guard let savedStandings = userDefaults.data(forKey: Keys.teamsStandings) else {
-            return nil
-        }
-        
-        do {
-            let decodedStandings = try decoder.decode([ConstructorStandingModel].self, from: savedStandings)
-            return decodedStandings
-        } catch {
-            print("Error encoding teams standings: \(error.localizedDescription)")
-            return nil
-        }
+        return cacheManager.retrieve()
     }
     
     func getLastUpdatedDate() -> Date? {
-        return userDefaults.object(forKey: Keys.lastTeamsUpdate) as? Date
+        return cacheManager.getLastUpdatedDate()
     }
-    
     
     func isCacheStale() -> Bool {
-        guard let lastUpdate = getLastUpdatedDate() else {
-            return true
-        }
-        
-        let staleThreshold: TimeInterval = 3600 // 1 hour
-        return Date().timeIntervalSince(lastUpdate) > staleThreshold
+        return cacheManager.isCacheStale()
     }
- 
+    
     func clearCache() {
-        userDefaults.removeObject(forKey: Keys.teamsStandings)
-        userDefaults.removeObject(forKey: Keys.lastTeamsUpdate)
+        cacheManager.clearCache()
     }
 }
