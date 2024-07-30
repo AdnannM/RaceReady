@@ -28,48 +28,6 @@
       }
       ```
 
- ---
-
- **2. Create Cache for Driver Standings and Teams Standings**
-    - **Goal**: Cache all results for driver and team standings and display when the API is not working.
-    - **Steps**:
-      1. **Implement Local Storage**: Similar to race caching, use UserDefaults or Core Data.
-      2. **Fetch and Save Data**: Fetch standings data from the API, save it locally upon successful fetch.
-      3. **Load from Cache**: Load the data from local storage when the API is not available.
-    - **Helper**:
-      ```swift
-      func saveStandingsToCache(_ standings: [Standing]) {
-          // Encode and save to UserDefaults or Core Data
-      }
-      
-      func loadStandingsFromCache() -> [Standing]? {
-          // Decode and return data from UserDefaults or Core Data
-      }
-      ```
-
- ---
-
- **3. Fix the Date and Time in Upcoming Races**
-    - **Goal**: Format time from UTC (Z) to Central European Time (CET).
-    - **Steps**:
-      1. **Date Formatter**: Use `DateFormatter` to convert and format the date.
-      2. **Convert Time Zone**: Set the time zone to CET.
-    - **Helper**:
-      ```swift
-      func formatToCET(_ utcDate: String) -> String {
-          let formatter = DateFormatter()
-          formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-          formatter.timeZone = TimeZone(abbreviation: "UTC")
-          if let date = formatter.date(from: utcDate) {
-              formatter.timeZone = TimeZone(identifier: "CET")
-              formatter.dateFormat = "yyyy-MM-dd HH:mm"
-              return formatter.string(from: date)
-          }
-          return utcDate
-      }
-      ```
-
- ---
 
  **4. Create Widget for Upcoming Races**
     - **Goal**: Display upcoming races in medium and large widget sizes.
@@ -91,44 +49,7 @@
     - **Helper**:
       - Follow Apple’s [WidgetKit documentation](https://developer.apple.com/documentation/widgetkit) for setup.
 
- ---
 
- **6. Request User Notification Permission**
-    - **Goal**: Request permission to send notifications when the app is first run.
-    - **Steps**:
-      1. **UNUserNotificationCenter**: Use this framework to request permission.
-      2. **Prompt User**: Show a prompt to the user on the main view.
-    - **Helper**:
-      ```swift
-      func requestNotificationPermission() {
-          UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-              // Handle permission
-          }
-      }
-      ```
-
- ---
-
- **7. Add Push Notification for Upcoming Races**
-    - **Goal**: Notify users 30 and 15 minutes before a race.
-    - **Steps**:
-      1. **Schedule Notifications**: Use `UNUserNotificationCenter` to schedule notifications.
-      2. **Trigger Notifications**: Set triggers based on race times.
-    - **Helper**:
-      ```swift
-      func scheduleRaceNotifications(race: Race) {
-          let content = UNMutableNotificationContent()
-          content.title = "Upcoming Race"
-          content.body = "The race starts in 30 minutes!"
-          
-          let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30*60, repeats: false)
-          let request = UNNotificationRequest(identifier: race.id, content: content, trigger: trigger)
-          
-          UNUserNotificationCenter.current().add(request)
-      }
-      ```
-
- ---
 
  **8. Create Different UI for Finished Races**
     - **Goal**: Display all results with time and laps for finished races.
@@ -149,17 +70,6 @@
       ```swift
       Link("Twitter", destination: URL(string: "https://twitter.com/yourProfile")!)
       ```
-
- ---
-
- **10. Handle Errors in a Better Way**
-    - **Goal**: Display an error view when the user is not connected to the internet.
-    - **Steps**:
-      1. **Network Check**: Check for network availability.
-      2. **Error View**: Show a user-friendly error view.
-    - **Helper**:
-      - Use Reachability to check for network connectivity.
-
  ---
 
  **11. Show Onboarding Screen Only First Time**

@@ -267,6 +267,15 @@
 			path = SeasonModel;
 			sourceTree = "<group>";
 		};
+		A600B4FF2C59478E00028996 /* RaceResultModel */ = {
+			isa = PBXGroup;
+			children = (
+				A607479A2C3FEEFC007679D6 /* RaceResultModel.swift */,
+				A60747982C3FC58F007679D6 /* RaceResultData.swift */,
+			);
+			path = RaceResultModel;
+			sourceTree = "<group>";
+		};
 		A6063FBD2C2F4250009C3AAB = {
 			isa = PBXGroup;
 			children = (
@@ -337,11 +346,10 @@
 		A6063FDC2C2F5079009C3AAB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A600B4FA2C5943A700028996 /* SeasonModel */,
-				A600B4F92C59438000028996 /* DriverModel */,
 				A600B4F82C59436300028996 /* ConstructorModel */,
-				A607479A2C3FEEFC007679D6 /* RaceResultModel.swift */,
-				A60747982C3FC58F007679D6 /* RaceResultData.swift */,
+				A600B4F92C59438000028996 /* DriverModel */,
+				A600B4FF2C59478E00028996 /* RaceResultModel */,
+				A600B4FA2C5943A700028996 /* SeasonModel */,
 				A67382F62C30B75000105868 /* TabbedItems.swift */,
 				A600B4FD2C5945E500028996 /* BaseStandingsModel.swift */,
 			);
