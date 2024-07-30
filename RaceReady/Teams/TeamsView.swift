@@ -16,7 +16,7 @@ struct TeamsView: View {
                 DotLoader(loadingText: "Teams loading...")
             } else if let errorMessage = constructorsStandingsModel.errorMessage {
                 errorView(message: errorMessage)
-            } else if constructorsStandingsModel.constructorStanding.isEmpty {
+            } else if constructorsStandingsModel.standings.isEmpty {
                 EmptyView()
             } else {
                 teamsList
@@ -42,15 +42,15 @@ struct TeamsView: View {
     }
     
     private var teamsList: some View {
-        List(constructorsStandingsModel.constructorStanding, id: \.constructor.name) { constructorStandigs in
+        List(constructorsStandingsModel.standings, id: \.constructor.name) { constructorStandigs in
             ConstructorStaindingView(constructorStandigs: constructorStandigs)
         }
     }
     
     private func loadDataIfNeeded() {
-        if constructorsStandingsModel.constructorStanding.isEmpty {
+        if constructorsStandingsModel.standings.isEmpty {
             Task {
-                await constructorsStandingsModel.populateConstructorsStandings()
+                await constructorsStandingsModel.populateStandings()
             }
         }
     }

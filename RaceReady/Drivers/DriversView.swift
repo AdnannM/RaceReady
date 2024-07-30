@@ -23,7 +23,7 @@ struct DriversView: View {
                 DotLoader(loadingText: "Loading drivers...")
             } else if let errorMessage = driverStandingsModel.errorMessage {
                 errorView(message: errorMessage)
-            } else if driverStandingsModel.driverStandings.isEmpty {
+            } else if driverStandingsModel.standings.isEmpty {
                 EmptyView()
             } else {
                 driverList
@@ -44,17 +44,17 @@ struct DriversView: View {
             }
         }
     }
-        
+    
     private var driverList: some View {
-        List(driverStandingsModel.driverStandings, id: \.driver.driverId) { driverStanding in
+        List(driverStandingsModel.standings, id: \.driver.driverId) { driverStanding in
             DriverStandingView(driverStanding: driverStanding)
         }
     }
     
     private func loadDataIfNeeded() {
-        if driverStandingsModel.driverStandings.isEmpty {
+        if driverStandingsModel.standings.isEmpty {
             Task {
-                await driverStandingsModel.populateDriverStandings()
+                await driverStandingsModel.populateStandings()
             }
         }
     }
