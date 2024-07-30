@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A600B4F32C58E09C00028996 /* F1TeamsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A600B4F22C58E09C00028996 /* F1TeamsCache.swift */; };
 		A6063FCA2C2F4250009C3AAB /* RaceReadyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FC92C2F4250009C3AAB /* RaceReadyApp.swift */; };
 		A6063FCC2C2F4251009C3AAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6063FCB2C2F4251009C3AAB /* ContentView.swift */; };
 		A6063FCE2C2F4252009C3AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6063FCD2C2F4252009C3AAB /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A600B4F22C58E09C00028996 /* F1TeamsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1TeamsCache.swift; sourceTree = "<group>"; };
 		A6063FC62C2F4250009C3AAB /* RaceReady.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaceReady.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6063FC92C2F4250009C3AAB /* RaceReadyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceReadyApp.swift; sourceTree = "<group>"; };
 		A6063FCB2C2F4251009C3AAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				A64294C82C57EB9900B0C575 /* F1StandingsCache.swift */,
+				A600B4F22C58E09C00028996 /* F1TeamsCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				A6C8A9912C36EA43007663AD /* RaceRow.swift in Sources */,
 				A6C8A9932C3739F8007663AD /* RaceCellView.swift in Sources */,
 				A6C8A98D2C369F84007663AD /* RaceView.swift in Sources */,
+				A600B4F32C58E09C00028996 /* F1TeamsCache.swift in Sources */,
 				A64294C92C57EB9900B0C575 /* F1StandingsCache.swift in Sources */,
 				A6C330DC2C513B490021B655 /* DotLoader.swift in Sources */,
 				A61E4B4B2C35987A0030E228 /* ShimmerComponents.swift in Sources */,

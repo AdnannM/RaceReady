@@ -7,17 +7,19 @@
 
 import Foundation
 
+ enum Keys {
+    static let driverStandings = "cacheDriverStandings"
+    static let lastUpdate = "driverStandingsLastUpdate"
+    static let teamsStandings = "cacheTeamsStandings"
+    static let lastTeamsUpdate = "teamsStandingsLastUpdate"
+}
+
 class F1StandingsCache {
     static let shared = F1StandingsCache()
     
     private let userDefaults = UserDefaults.standard
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
-    
-    private enum Keys {
-        static let driverStandings = "cacheDriverStandings"
-        static let lastUpdate = "driverStandingsLastUpdate"
-    }
     
     func saveDriverStandings(_ standings: [DriverStanding]) {
         do {

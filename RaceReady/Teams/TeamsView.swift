@@ -11,33 +11,46 @@ struct TeamsView: View {
     @EnvironmentObject var constructorsStandingsModel: ConstructorsStandingsModel
     
     var body: some View {
-        Group {
+        VStack {
             if constructorsStandingsModel.isLoading {
-                DotLoader(loadingText: "Loading teams...")
-            } else if let error = constructorsStandingsModel.error {
-                ErrorView(errorMessage: error.localizedDescription) {
-                    Task {
-                         constructorsStandingsModel.populateConstructorsStandings()
-                    }
-                }
+                DotLoader(loadingText: "Teams loading...")
+            } else if let errorMessage = constructorsStandingsModel.errorMessage {
+                errorView(message: errorMessage)
             } else if constructorsStandingsModel.constructorStanding.isEmpty {
-                Text("No team standings available")
-                    .foregroundColor(.secondary)
+                EmptyView()
             } else {
-                List {
-                    ForEach(constructorsStandingsModel.constructorStanding, id: \.constructor.name) { constructorStanding in
-                        ConstructorStaindingView(constructorStandigs: constructorStanding)
-                    }
-                }
+                teamsList
             }
         }
-        .navigationTitle("F1 Teams 2024")
+        .navigationTitle("F1 Teams Standings")
         .navigationBarTitleDisplayMode(.large)
-        .onAppear {
-            if constructorsStandingsModel.constructorStanding.isEmpty {
-                Task {
-                     constructorsStandingsModel.populateConstructorsStandings()
-                }
+        .onAppear(perform: {
+            loadDataIfNeeded()
+        })
+    }
+    
+    
+    private func errorView(message: String) -> some View {
+        Group {
+            if constructorsStandingsModel.isCacheAvailable {
+                teamsList
+            } else {
+                Text("No cached data available")
+                    .foregroundColor(.orange)
+            }
+        }
+    }
+    
+    private var teamsList: some View {
+        List(constructorsStandingsModel.constructorStanding, id: \.constructor.name) { constructorStandigs in
+            ConstructorStaindingView(constructorStandigs: constructorStandigs)
+        }
+    }
+    
+    private func loadDataIfNeeded() {
+        if constructorsStandingsModel.constructorStanding.isEmpty {
+            Task {
+                await constructorsStandingsModel.populateConstructorsStandings()
             }
         }
     }
