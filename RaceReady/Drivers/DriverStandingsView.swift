@@ -78,9 +78,6 @@ struct DriverStandingView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 .frame(width: 50)
-                .onPreferenceChange(WidthPreferenceKey.self) { width in
-                    print("Width of '239' text: \(width)")
-                }
             }
             .padding(.bottom, 10)
         }

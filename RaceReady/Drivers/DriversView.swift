@@ -32,6 +32,7 @@ struct DriversView: View {
         .navigationTitle("F1 Drivers 2024")
         .navigationBarTitleDisplayMode(.large)
         .onAppear(perform: loadDataIfNeeded)
+        .refreshable { await driverStandingsModel.refreshData() }
     }
     
     private func errorView(message: String) -> some View {

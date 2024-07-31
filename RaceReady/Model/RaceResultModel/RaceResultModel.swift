@@ -35,7 +35,6 @@ class RaceResultModel: ObservableObject {
                 if let driverData = driverInfo.driverInfo.first(where: { $0.driverCode == driverCode }) {
                     raceResults[index].results[resultIndex].driver.driverImage = driverData.driverImage
                 }
-                print("Driver Code: \(driverCode), Assigned Image: \(raceResults[index].results[resultIndex].driver.driverImage ?? "None")")
             }
         }
     }

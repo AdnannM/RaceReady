@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TeamsView: View {
     @EnvironmentObject var constructorsStandingsModel: ConstructorsStandingsModel
+    @State private var isRefreshing = false
     
     var body: some View {
         VStack {
@@ -24,9 +25,13 @@ struct TeamsView: View {
         }
         .navigationTitle("F1 Teams Standings")
         .navigationBarTitleDisplayMode(.large)
-        .onAppear(perform: {
-            loadDataIfNeeded()
-        })
+        .onAppear(perform: { loadDataIfNeeded() })
+        .refreshable {
+            guard !isRefreshing else { return }
+            isRefreshing = true
+            await constructorsStandingsModel.refreshData()
+            isRefreshing = false
+        }
     }
     
     
