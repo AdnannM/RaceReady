@@ -13,4 +13,6 @@ enum Keys {
     static let lastUpdate = "driverStandingsLastUpdate"
     static let teamsStandings = "cacheTeamsStandings"
     static let lastTeamsUpdate = "teamsStandingsLastUpdate"
+    static let season = "cacheSeason"
+    static let lastSeasonUpdate = "lastSeasonUpdate"
 }

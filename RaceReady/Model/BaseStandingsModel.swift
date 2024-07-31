@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Base Model
 
 enum StandingsType {
-    case teams, drivers
+    case teams, drivers, season
 }
 
 @MainActor

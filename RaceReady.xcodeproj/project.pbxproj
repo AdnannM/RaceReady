@@ -478,9 +478,6 @@
 			children = (
 				A61F97B32C53A78700F42388 /* CardAndRowComponents */,
 				A61E4B4A2C35987A0030E228 /* ShimmerComponents.swift */,
-				A6C8A98E2C36EA10007663AD /* RaceCard.swift */,
-				A6C8A9902C36EA43007663AD /* RaceRow.swift */,
-				A6C8A9922C3739F8007663AD /* RaceCellView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -488,6 +485,7 @@
 		A61F97B32C53A78700F42388 /* CardAndRowComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A6AEF24C2C5A36640067A717 /* SeasonRace */,
 				A61F97B42C53A7A400F42388 /* RaceHeaderView.swift */,
 				A61F97B62C53A7E400F42388 /* FlagImageView.swift */,
 				A61F97B82C53A81F00F42388 /* CircuitImageView.swift */,
@@ -514,6 +512,16 @@
 				A600B4FB2C5945BB00028996 /* F1CacheManager.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		A6AEF24C2C5A36640067A717 /* SeasonRace */ = {
+			isa = PBXGroup;
+			children = (
+				A6C8A9922C3739F8007663AD /* RaceCellView.swift */,
+				A6C8A98E2C36EA10007663AD /* RaceCard.swift */,
+				A6C8A9902C36EA43007663AD /* RaceRow.swift */,
+			);
+			path = SeasonRace;
 			sourceTree = "<group>";
 		};
 		A6C330B62C50E9AF0021B655 /* Notification */ = {

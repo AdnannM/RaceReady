@@ -12,10 +12,12 @@ class F1CacheManager {
     static let shared = F1CacheManager()
     private let teamsCache: CacheManager<ConstructorStandingModel>
     private let driversCache: CacheManager<DriverStanding>
+    private let seasonCache: CacheManager<Race>
     
     private init() {
         teamsCache = CacheManager(cacheKey: Keys.teamsStandings, lastUpdateKey: Keys.lastTeamsUpdate)
         driversCache = CacheManager(cacheKey: Keys.driverStandings, lastUpdateKey: Keys.lastUpdate)
+        seasonCache = CacheManager(cacheKey: Keys.season, lastUpdateKey: Keys.lastSeasonUpdate)
     }
     
     func saveTeamsStandings(_ standings: [ConstructorStandingModel]) {
@@ -34,12 +36,22 @@ class F1CacheManager {
         return driversCache.retrieve()
     }
     
+    func saveSeasonRace(_ standings: [Race]) {
+        seasonCache.save(standings)
+    }
+    
+    func getSeasonRace() -> [Race]? {
+        seasonCache.retrieve()
+    }
+    
     func getLastUpdatedDate(for type: StandingsType) -> Date? {
         switch type {
         case .teams:
             return teamsCache.getLastUpdatedDate()
         case .drivers:
             return driversCache.getLastUpdatedDate()
+        case .season:
+            return seasonCache.getLastUpdatedDate()
         }
     }
     
@@ -49,6 +61,8 @@ class F1CacheManager {
             return teamsCache.isCacheStale()
         case .drivers:
             return driversCache.isCacheStale()
+        case .season:
+            return seasonCache.isCacheStale()
         }
     }
     
@@ -58,6 +72,8 @@ class F1CacheManager {
             teamsCache.clearCache()
         case .drivers:
             driversCache.clearCache()
+        case .season:
+            seasonCache.clearCache()
         }
     }
 }

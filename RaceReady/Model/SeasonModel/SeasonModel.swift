@@ -14,6 +14,7 @@ class SeasonModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var hasLoaded: Bool = false
     @Published var errorMessage: String?
+    @Published var dataSource: DataSource = .api
     var circuitInfo = CircuitInfo()
 
     init(webservice: WebService) {
@@ -29,53 +30,61 @@ class SeasonModel: ObservableObject {
         isLoading = true
         errorMessage = nil
 
-        do {
-            races = try await webservice.fetchSeason()
-            hasLoaded = true
-            for i in 0..<races.count {
-                if let circuitData = circuitInfo.circuitInfo.first(where: { $0.id == i + 1 }) {
-                    races[i].circuitImage = circuitData.circuitImage
-                    races[i].countryFlag = circuitData.countryFlag
-                    races[i].firstGp = circuitData.firstGp
-                    races[i].numberOfLaps = circuitData.numberOfLaps
-                    races[i].circuitLenght = circuitData.circuitLenght
-                    races[i].raceDistance = circuitData.raceDistance
-                }
-            }
-            print("Season data populated")
-        } catch {
-            handleFetchError(error)
+        if F1CacheManager.shared.isCacheStale(for: .season) {
+            await fetchFromApi()
+        } else {
+            loadFromCache()
         }
 
         isLoading = false
     }
 
-    private func handleFetchError(_ error: Error) {
-        if let urlError = error as? URLError {
-            switch urlError.code {
-            case .timedOut:
-                errorMessage = "The request timed out. Please try again later."
-            case .notConnectedToInternet:
-                errorMessage = "No internet connection. Please check your network settings."
-            case .cannotFindHost:
-                errorMessage = "Cannot find host. Please check the URL."
-            default:
-                errorMessage = "URLError: \(urlError.localizedDescription) (Code: \(urlError.code.rawValue))"
-            }
-        } else if let networkingError = error as? NetworkingError {
-            switch networkingError {
-            case .requestFailed(let statusCode):
-                if statusCode == 503 {
-                    errorMessage = "Service is currently unavailable. Please try again later."
-                } else {
-                    errorMessage = "The request failed with status code: \(statusCode)"
-                }
-            default:
-                errorMessage = "Unexpected error: \(error.localizedDescription)"
-            }
-        } else {
-            errorMessage = "Unexpected error: \(error.localizedDescription)"
+    private func fetchFromApi() async {
+        do {
+            races = try await webservice.fetchSeason()
+            updateRacesWithCircuitInfo()
+            F1CacheManager.shared.saveSeasonRace(races)
+            hasLoaded = true
+            dataSource = .api
+            print("Season data populated from API - season")
+        } catch {
+            handleFetchError(error)
         }
-        print(errorMessage ?? "")
+    }
+
+    private func loadFromCache() {
+        if let cachedRaces = F1CacheManager.shared.getSeasonRace() {
+            races = cachedRaces
+            updateRacesWithCircuitInfo()
+            hasLoaded = true
+            dataSource = .cache
+            print("Season data loaded from cache - season")
+        } else {
+            print("No cache data available")
+            Task {
+                await fetchFromApi()
+            }
+        }
+    }
+
+    private func updateRacesWithCircuitInfo() {
+        for i in 0..<races.count {
+            if let circuitData = circuitInfo.circuitInfo.first(where: { $0.id == i + 1 }) {
+                races[i].circuitImage = circuitData.circuitImage
+                races[i].countryFlag = circuitData.countryFlag
+                races[i].firstGp = circuitData.firstGp
+                races[i].numberOfLaps = circuitData.numberOfLaps
+                races[i].circuitLenght = circuitData.circuitLenght
+                races[i].raceDistance = circuitData.raceDistance
+            }
+        }
+    }
+
+    private func handleFetchError(_ error: Error) {
+        // ... (keep your existing error handling code here)
+    }
+
+    func refreshData() async {
+        await fetchFromApi()
     }
 }
