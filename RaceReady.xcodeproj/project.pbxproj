@@ -61,6 +61,9 @@
 		A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */; };
 		A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */; };
 		A6A3BD6D2C4804A30034626F /* ConstructorExtendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */; };
+		A6AEF24E2C5A54FA0067A717 /* RaceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AEF24D2C5A54FA0067A717 /* RaceErrorView.swift */; };
+		A6AEF2502C5A55240067A717 /* RaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AEF24F2C5A55240067A717 /* RaceListView.swift */; };
+		A6AEF2522C5A553E0067A717 /* RaceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AEF2512C5A553E0067A717 /* RaceSection.swift */; };
 		A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */; };
 		A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B02C4FA5260021B655 /* SettingsView.swift */; };
 		A6C330B32C4FB99B0021B655 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */; };
@@ -178,6 +181,9 @@
 		A6A3BD682C47DCD90034626F /* DriverTeamColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTeamColors.swift; sourceTree = "<group>"; };
 		A6A3BD6A2C47DD170034626F /* DriverStandingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverStandingsView.swift; sourceTree = "<group>"; };
 		A6A3BD6C2C4804A30034626F /* ConstructorExtendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorExtendedData.swift; sourceTree = "<group>"; };
+		A6AEF24D2C5A54FA0067A717 /* RaceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceErrorView.swift; sourceTree = "<group>"; };
+		A6AEF24F2C5A55240067A717 /* RaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceListView.swift; sourceTree = "<group>"; };
+		A6AEF2512C5A553E0067A717 /* RaceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceSection.swift; sourceTree = "<group>"; };
 		A6C330AE2C4FA2BF0021B655 /* SettingslabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingslabelView.swift; sourceTree = "<group>"; };
 		A6C330B02C4FA5260021B655 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A6C330B22C4FB99B0021B655 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
@@ -518,8 +524,11 @@
 			isa = PBXGroup;
 			children = (
 				A6C8A9922C3739F8007663AD /* RaceCellView.swift */,
+				A6AEF24D2C5A54FA0067A717 /* RaceErrorView.swift */,
 				A6C8A98E2C36EA10007663AD /* RaceCard.swift */,
 				A6C8A9902C36EA43007663AD /* RaceRow.swift */,
+				A6AEF24F2C5A55240067A717 /* RaceListView.swift */,
+				A6AEF2512C5A553E0067A717 /* RaceSection.swift */,
 			);
 			path = SeasonRace;
 			sourceTree = "<group>";
@@ -735,6 +744,7 @@
 				A6C330B82C50E9BC0021B655 /* NotificationManager.swift in Sources */,
 				A6F864A12C498AD300F69C0B /* ConstructorStaindingView.swift in Sources */,
 				A600B4F72C58FEB900028996 /* CacheKeys.swift in Sources */,
+				A6AEF24E2C5A54FA0067A717 /* RaceErrorView.swift in Sources */,
 				A600B4F52C58FE6000028996 /* CacheManager.swift in Sources */,
 				A62DC3F72C415211002C9C67 /* DriversData.swift in Sources */,
 				A61F97BB2C53A84800F42388 /* RaceInfoView.swift in Sources */,
@@ -746,6 +756,7 @@
 				A6A3BD6B2C47DD170034626F /* DriverStandingsView.swift in Sources */,
 				A6C330B12C4FA5260021B655 /* SettingsView.swift in Sources */,
 				A607479B2C3FEEFC007679D6 /* RaceResultModel.swift in Sources */,
+				A6AEF2502C5A55240067A717 /* RaceListView.swift in Sources */,
 				A61E4B432C3582810030E228 /* FormattedDataAndTime+Extension.swift in Sources */,
 				A62DC3F52C413350002C9C67 /* RaceResultsViewModel.swift in Sources */,
 				A61F97B72C53A7E500F42388 /* FlagImageView.swift in Sources */,
@@ -779,6 +790,7 @@
 				A617066E2C3D40A2003182FA /* RoundedBorderShape.swift in Sources */,
 				A6C330AF2C4FA2BF0021B655 /* SettingslabelView.swift in Sources */,
 				A6A3BD692C47DCD90034626F /* DriverTeamColors.swift in Sources */,
+				A6AEF2522C5A553E0067A717 /* RaceSection.swift in Sources */,
 				A617066B2C3D404D003182FA /* CircuitInfoRow.swift in Sources */,
 				A653F5942C42894F00D42CCF /* DriversView.swift in Sources */,
 				A6FDD9C12C38222B00B2CBFF /* Color+Extension.swift in Sources */,
