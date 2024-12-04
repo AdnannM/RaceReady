@@ -17,8 +17,11 @@ Technologies Used:
 1. SwiftUI
 2. Combine framework for reactive programming
 3. Ergast API for Formula 1 data retrieval
-4. Core Data for local data persistence
+4. Load data from Cache
 
+Todo:
+
+1. Core Data for local data persistence
 
 Screenshots:
 
