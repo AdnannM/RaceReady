@@ -42,5 +42,5 @@ Pull requests are also encouraged for enhancements.
 License:
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact:
-For any inquiries, reach out to adnannmuratovic@icloud.com or [Your Website URL].
+Author:
+Adnan Muratovic
